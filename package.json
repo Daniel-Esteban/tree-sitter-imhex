@@ -1,0 +1,32 @@
+{
+  "name": "tree-sitter-imhex",
+  "version": "0.0.1",
+  "description": "imhex grammar for tree-sitter",
+  "main": "bindings/node",
+  "keywords": [
+    "parsing",
+    "incremental"
+  ],
+  "dependencies": {
+    "nan": "^2.16.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.6"
+  },
+  "scripts": {
+    "test": "tree-sitter test",
+    "build": "tree-sitter generate && node-gyp build"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.imhex",
+      "file-types": [
+        "pat",
+        "hexpat"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ]
+}
