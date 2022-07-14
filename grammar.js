@@ -15,11 +15,13 @@ module.exports = grammar({
         ),
         variable_definition: $ => seq(
             $.primitive_type,
-            repeat(seq($.identifier, ',')),
-            $.identifier,
+            $.identifier_definition,
             ';'
         ),
-
+        identifier_definition: $ => seq(
+            repeat(seq($.identifier, ',')),
+            $.identifier,
+        ),
         field_list: $ => seq(
             '{',
             repeat($.variable_definition),

@@ -16,15 +16,19 @@ u64 ident, xx, yy;
     fields: (field_list
       (variable_definition
         (primitive_type)
-        (identifier))
+        (identifier_definition
+          (identifier)))
       (variable_definition
         (primitive_type)
-        (identifier))
+        (identifier_definition
+          (identifier)))
       (variable_definition
         (primitive_type)
-        (identifier))
+        (identifier_definition
+          (identifier)))
       (variable_definition
         (primitive_type)
-        (identifier)
-        (identifier)
-        (identifier)))))
+        (identifier_definition
+          (identifier)
+          (identifier)
+          (identifier))))))

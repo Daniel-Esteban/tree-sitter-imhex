@@ -24,53 +24,70 @@ auto ident;
 (source_file
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+        (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+        (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 (variable_definition
     (primitive_type)
-        (identifier))
+    (identifier_definition
+      (identifier)))
 )
