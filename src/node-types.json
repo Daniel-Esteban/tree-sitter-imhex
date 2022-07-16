@@ -1,5 +1,125 @@
 [
   {
+    "type": "array_definition",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "attribute",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "color",
+            "named": false
+          },
+          {
+            "type": "comment",
+            "named": false
+          },
+          {
+            "type": "format",
+            "named": false
+          },
+          {
+            "type": "hidden",
+            "named": false
+          },
+          {
+            "type": "inline",
+            "named": false
+          },
+          {
+            "type": "name",
+            "named": false
+          },
+          {
+            "type": "no_unique_address",
+            "named": false
+          },
+          {
+            "type": "pointer_base",
+            "named": false
+          },
+          {
+            "type": "static",
+            "named": false
+          },
+          {
+            "type": "transform",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "binary_numeric_operator",
     "named": true,
     "fields": {},
@@ -12,11 +132,16 @@
           "named": true
         },
         {
-          "type": "number",
+          "type": "number_literal",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "endian_indicator",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "field_list",
@@ -27,6 +152,14 @@
       "required": false,
       "types": [
         {
+          "type": "array_definition",
+          "named": true
+        },
+        {
+          "type": "padding",
+          "named": true
+        },
+        {
           "type": "variable_definition",
           "named": true
         }
@@ -34,18 +167,38 @@
     }
   },
   {
-    "type": "identifier_definition",
+    "type": "number_literal",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        }
-      ]
+    "fields": {}
+  },
+  {
+    "type": "padding",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -66,7 +219,7 @@
           "named": true
         },
         {
-          "type": "number",
+          "type": "number_literal",
           "named": true
         }
       ]
@@ -81,11 +234,38 @@
       "required": false,
       "types": [
         {
+          "type": "array_definition",
+          "named": true
+        },
+        {
           "type": "struct_definition",
           "named": true
         },
         {
+          "type": "union_definition",
+          "named": true
+        },
+        {
           "type": "variable_definition",
+          "named": true
+        },
+        {
+          "type": "variable_placement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
           "named": true
         }
       ]
@@ -95,7 +275,17 @@
     "type": "struct_definition",
     "named": true,
     "fields": {
-      "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "body": {
         "multiple": false,
         "required": true,
         "types": [
@@ -105,7 +295,7 @@
           }
         ]
       },
-      "struct_name": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [
@@ -130,7 +320,7 @@
           "named": true
         },
         {
-          "type": "number",
+          "type": "number_literal",
           "named": true
         }
       ]
@@ -149,29 +339,148 @@
           "named": true
         },
         {
-          "type": "number",
+          "type": "number_literal",
           "named": true
         }
       ]
     }
   },
   {
+    "type": "union_definition",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "variable_definition",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "identifier_definition",
-          "named": true
-        },
-        {
-          "type": "primitive_type",
-          "named": true
-        }
-      ]
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "variable_placement",
+    "named": true,
+    "fields": {
+      "attribute": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "attribute",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "offset": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -180,6 +489,10 @@
   },
   {
     "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
     "named": false
   },
   {
@@ -263,6 +576,26 @@
     "named": false
   },
   {
+    "type": "@",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "[[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "]]",
+    "named": false
+  },
+  {
     "type": "^",
     "named": false
   },
@@ -272,6 +605,10 @@
   },
   {
     "type": "auto",
+    "named": false
+  },
+  {
+    "type": "be",
     "named": false
   },
   {
@@ -287,11 +624,31 @@
     "named": false
   },
   {
+    "type": "color",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": false
+  },
+  {
     "type": "double",
     "named": false
   },
   {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
     "type": "float",
+    "named": false
+  },
+  {
+    "type": "format",
+    "named": false
+  },
+  {
+    "type": "hidden",
     "named": false
   },
   {
@@ -299,8 +656,28 @@
     "named": true
   },
   {
-    "type": "number",
-    "named": true
+    "type": "inline",
+    "named": false
+  },
+  {
+    "type": "le",
+    "named": false
+  },
+  {
+    "type": "name",
+    "named": false
+  },
+  {
+    "type": "no_unique_address",
+    "named": false
+  },
+  {
+    "type": "padding",
+    "named": false
+  },
+  {
+    "type": "pointer_base",
+    "named": false
   },
   {
     "type": "return",
@@ -327,12 +704,24 @@
     "named": false
   },
   {
+    "type": "static",
+    "named": false
+  },
+  {
     "type": "str",
     "named": false
   },
   {
     "type": "struct",
     "named": false
+  },
+  {
+    "type": "transform",
+    "named": false
+  },
+  {
+    "type": "type_identifier",
+    "named": true
   },
   {
     "type": "u128",
@@ -352,6 +741,10 @@
   },
   {
     "type": "u8",
+    "named": false
+  },
+  {
+    "type": "union",
     "named": false
   },
   {

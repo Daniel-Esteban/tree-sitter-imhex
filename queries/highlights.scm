@@ -1,30 +1,47 @@
-"struct" @keyword
-"return" @keyword
+[
+  "struct"
+  "union"
+  "padding"
+  "return"
+] @keyword
 
-"!" @operator
-"~" @operator
+[
+ "!"
+ "~"
 
-":" @operator
-"?" @operator
+ ":"
+ "?"
 
-"+" @operator
-"-" @operator
-"*" @operator
-"/" @operator
-"%" @operator
-">>" @operator
-"<<" @operator
-"&" @operator
-"|" @operator
-"^" @operator
-"==" @operator
-"!=" @operator
-">" @operator
-"<" @operator
-">=" @operator
-"<=" @operator
-"&&" @operator
-"^^" @operator
+ "+"
+ "-"
+ "*"
+ "/"
+ "%"
+ ">>"
+ "<<"
+ "&"
+ "|"
+ "^"
+ "=="
+ "!="
+ ">"
+ "<"
+ ">="
+ "<="
+ "&&"
+ "^^"
+
+ "@"
+] @operator
+
+[ "(" ")" "{" "}" "[[" "]]" ] @punctuation.bracket
+
+[ ";" "," ] @punctuation.delimiter
 
 (identifier) @variable
-(primitive_type) @type
+(primitive_type) @type.builtin
+(endian_indicator) @type.builtin
+(type_identifier) @type
+(number_literal) @number
+(string_literal) @string
+(attribute) @attribute

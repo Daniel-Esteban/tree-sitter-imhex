@@ -1,0 +1,28 @@
+==================
+Simple union definition
+==================
+
+union myunion {
+u32 uident;
+s32 sident;
+MyType tident;
+};
+
+---
+(source_file
+  (union_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+      (variable_definition
+        type: (type_identifier)
+        name: (identifier))
+    )
+  )
+)
+

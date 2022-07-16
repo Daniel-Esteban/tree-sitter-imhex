@@ -1,0 +1,57 @@
+==================
+Simple struct definition
+==================
+
+struct mystruct {
+u32 ident;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)))
+  )
+)
+
+==================
+Multi field struct definition
+==================
+
+struct mystruct {
+u32 ident;
+auto ident2;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)))))
+
+==================
+Multi identifier struct definition
+==================
+
+struct mystruct {
+u32 ident, ident2;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)
+        name: (identifier)))))

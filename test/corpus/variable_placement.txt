@@ -1,0 +1,34 @@
+==================
+Simple variable placement
+==================
+
+MyVar ident @ 51;
+u8 ident @ 51;
+u8 ident @ 0x51;
+u8 ident @ 0b51;
+u8 ident @ offset;
+
+---
+(source_file
+  (variable_placement
+    type: (type_identifier)
+    name: (identifier)
+    offset: (number_literal))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (identifier))
+)
+

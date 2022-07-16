@@ -1,0 +1,113 @@
+==================
+Simple Variable definitions
+==================
+
+u8 ident;
+u16 ident;
+u32 ident;
+u64 ident;
+u128 ident;
+s8 ident;
+s16 ident;
+s32 ident;
+s64 ident;
+s128 ident;
+float ident;
+double ident;
+char ident;
+char16 ident;
+bool ident;
+str ident;
+auto ident;
+
+---
+(source_file
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier))
+)
+
+==================
+Simple Variable definitions
+==================
+
+u8 ident, ident;
+
+---
+(source_file
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier)
+    name: (identifier))
+)
+
+==================
+Simple Array definitions
+==================
+
+u8 ident[];
+MyType ident[50];
+u8 ident[x];
+
+---
+(source_file
+  (array_definition
+    type: (primitive_type)
+    name: (identifier))
+  (array_definition
+    type: (type_identifier)
+    name: (identifier)
+    size: (number_literal))
+  (array_definition
+    type: (primitive_type)
+    name: (identifier)
+    size: (identifier))
+)

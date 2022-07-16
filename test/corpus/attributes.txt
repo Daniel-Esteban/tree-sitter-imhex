@@ -1,0 +1,117 @@
+==================
+Simple attribute
+==================
+
+MyVar ident @ 51 [[hidden]];
+MyVar ident @ 51 [[inline]];
+MyVar ident @ 51 [[no_unique_address]];
+u8 ident @ 51 [[color("00FF00")]];
+u8 ident @ 51 [[name("Alternative name")]];
+u8 ident @ 51 [[comment("This is a comment")]];
+u8 ident @ 51 [[format("formatter_function_name")]];
+u8 ident @ 51 [[transform("transformer_function_name")]];
+u8 ident @ 51 [[pointer_base("pointer_base_function_name")]];
+
+---
+(source_file
+  (variable_placement
+    type: (type_identifier)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute))
+  (variable_placement
+    type: (type_identifier)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute))
+  (variable_placement
+    type: (type_identifier)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (number_literal)
+    attribute: (attribute
+      value: (string_literal)))
+)
+
+==================
+Inside struct and union
+==================
+
+struct MyStruct {
+    MyVar ident [[hidden]];
+    u8 ident [[color("00FF00")]];
+}[[static]];
+
+union MyUnion {
+    MyVar ident [[hidden]];
+    u8 ident [[color("00FF00")]];
+}[[static]];
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (type_identifier)
+        name: (identifier)
+        attribute: (attribute))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)
+        attribute: (attribute
+          value: (string_literal)))
+    )
+    attribute: (attribute)
+  )
+  (union_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (type_identifier)
+        name: (identifier)
+        attribute: (attribute))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)
+        attribute: (attribute
+          value: (string_literal)))
+    )
+    attribute: (attribute)
+  )
+)
+
