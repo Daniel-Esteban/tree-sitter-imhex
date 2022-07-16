@@ -114,7 +114,7 @@ module.exports = grammar({
         ),
 
         _primitive_type: $ => seq(
-            optional($.endian_indicator),
+            field('endian', optional($.endian_indicator)),
             $.primitive_type,
         ),
 

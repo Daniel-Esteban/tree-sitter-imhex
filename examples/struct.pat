@@ -13,7 +13,7 @@ struct MyStruct {
 
 struct MyStruct {
     MyVar ident [[hidden]];
-    u8 ident [[color("00FF00")]];
+    be u8 ident [[color("00FF00")]];
 }[[static]];
 
 union MyUnion {

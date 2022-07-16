@@ -6,7 +6,7 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
 ## TODO List
 - [ ] Data Types
     - [X] Built-in Types
-    - [ ] Endianess
+    - [X] Endianess
     - [X] Arrays
     - [ ] Using declarations
     - [ ] Literals

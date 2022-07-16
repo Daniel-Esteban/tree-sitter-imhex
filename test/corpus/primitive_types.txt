@@ -111,3 +111,24 @@ u8 ident[x];
     name: (identifier)
     size: (identifier))
 )
+
+==================
+Different endians
+==================
+
+le u32 ident;
+be u32 ident;
+
+---
+(source_file
+  (variable_definition
+    endian: (endian_indicator)
+    type: (primitive_type)
+    name: (identifier))
+  (variable_definition
+    endian: (endian_indicator)
+    type: (primitive_type)
+    name: (identifier))
+)
+
+
