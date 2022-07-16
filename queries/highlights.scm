@@ -45,3 +45,4 @@
 (number_literal) @number
 (string_literal) @string
 (attribute) @attribute
+(comment) @comment

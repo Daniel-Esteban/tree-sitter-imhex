@@ -10,7 +10,7 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
     - [X] Arrays
     - [ ] Using declarations
     - [ ] Literals
-- [ ] Comments
+- [X] Comments
 - [ ] Mathematical expressions
 - [X] Variable placement
 - [X] Arrays

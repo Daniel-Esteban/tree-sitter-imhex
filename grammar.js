@@ -1,6 +1,11 @@
 module.exports = grammar({
     name: 'imhex',
 
+    extras: $ => [
+        /\s|\\\r?\n/,
+        $.comment,
+    ],
+
     rules: {
         source_file: $ => repeat($._definition),
 

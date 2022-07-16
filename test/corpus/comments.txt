@@ -1,0 +1,18 @@
+==================
+Comments
+==================
+// Single line comment
+/*
+union myunion {
+u32 uident;
+s32 sident;
+MyType tident;
+};
+*/
+
+---
+(source_file
+  (comment)
+  (comment)
+)
+
