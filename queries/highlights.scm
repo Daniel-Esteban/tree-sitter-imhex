@@ -52,3 +52,4 @@
 (boolean_literal) @boolean
 (attribute) @attribute
 (comment) @comment
+(dollar) @constant.builtin

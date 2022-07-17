@@ -74,4 +74,35 @@ le u32 ident, ident2;
         endian: (endian_indicator)
         type: (primitive_type)
         name: (identifier)
-        name: (identifier)))))
+        name: (identifier))))
+)
+
+==================
+With dollar sign
+==================
+
+struct mystruct {
+    u8 ident;
+    $ = $ + 15;
+    u32 ident;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+      (assignation_statement
+        (dollar)
+        (binary_numeric_operator
+          left: (dollar)
+          right: (number_literal)))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+    )
+  )
+)

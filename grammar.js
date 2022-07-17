@@ -35,14 +35,14 @@ module.exports = grammar({
 
         struct_definition: $ => seq(
             'struct',
-            field('name', $.identifier),
+            field('name', $._identifier),
             field('body',$.field_list),
             $._declaration_finish
         ),
 
         union_definition: $ => seq(
             'union',
-            field('name', $.identifier),
+            field('name', $._identifier),
             field('body',$.field_list),
             $._declaration_finish
         ),
@@ -68,12 +68,13 @@ module.exports = grammar({
         ),
 
         _offset: $ => choice(
-            $.number_literal,
-            $.identifier,
+            $._expression,
+            // $.number_literal, //?
+            // $._identifier,
         ),
 
         assignation_statement: $ => seq(
-            $.identifier,
+            $._identifier,
             '=',
             $._expression,
             ';' // TODO: Optional?
@@ -100,13 +101,13 @@ module.exports = grammar({
 
         _array_size: $ => choice(
             $.number_literal,
-            $.identifier,
+            $._identifier,
             //TODO: Loopsized arrays
         ),
 
         _identifier_definition: $ => seq(
-            repeat(seq(field('name', $.identifier), ',')),
-            field('name', $.identifier),
+            repeat(seq(field('name', $._identifier), ',')),
+            field('name', $._identifier),
         ),
 
         field_list: $ => seq(
@@ -178,7 +179,7 @@ module.exports = grammar({
         ),
 
         _expression: $ => choice(
-            $.identifier,
+            $._identifier,
             $._number,
             $._operator,
             $.string_literal,
@@ -187,7 +188,11 @@ module.exports = grammar({
             // TODO: other kinds of expressions
         ),
 
+        _identifier: $ => choice($.identifier, $.dollar),
+
         identifier: $ => /[a-zA-Z_]\w*/,
+
+        dollar: $=> '$',
 
         _type_identifier: $ => alias($.identifier, $.type_identifier),
 
@@ -202,7 +207,7 @@ module.exports = grammar({
 
         _number: $ => choice( //TODO: Remove? distinguish float and integer?
             prec(3, $.number_literal),
-            // $.identifier,
+            // $._identifier,
         ),
 
         _operator: $=> choice( // TODO: Maybe just call them operators?
