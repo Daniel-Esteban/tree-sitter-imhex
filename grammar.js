@@ -1,3 +1,20 @@
+const PREC = {
+    TERNARY: -1,
+    DEFAULT: 0,
+    UNARY: 1,
+    OR: 2,
+    AND: 3,
+    XOR: 4,
+    BITWISE_OR: 5,
+    BITWISE_XOR: 6,
+    BITWISE_AND: 7,
+    EQ: 8,
+    SHIFT: 9,
+    ADD: 10,
+    MULT: 11,
+
+}
+
 module.exports = grammar({
     name: 'imhex',
 
@@ -32,7 +49,8 @@ module.exports = grammar({
 
         _definition_statement: $ => choice(
             $.variable_definition,
-            $.array_definition
+            $.array_definition,
+            $.assignation_statement
         ),
 
         variable_definition: $ => seq(
@@ -45,8 +63,20 @@ module.exports = grammar({
             field('type', $._type),
             $._identifier_definition,
             '@',
-            field('offset', $._number),
+            field('offset', $._offset),
             $._declaration_finish
+        ),
+
+        _offset: $ => choice(
+            $.number_literal,
+            $.identifier,
+        ),
+
+        assignation_statement: $ => seq(
+            $.identifier,
+            '=',
+            $._expression,
+            ';' // TODO: Optional?
         ),
 
         array_definition: $ => seq(
@@ -69,7 +99,8 @@ module.exports = grammar({
         ),
 
         _array_size: $ => choice(
-            $._number,
+            $.number_literal,
+            $.identifier,
             //TODO: Loopsized arrays
         ),
 
@@ -150,6 +181,7 @@ module.exports = grammar({
             $.identifier,
             $._number,
             $._operator,
+            $.string_literal
             // TODO: other kinds of expressions
         ),
 
@@ -157,59 +189,77 @@ module.exports = grammar({
 
         _type_identifier: $ => alias($.identifier, $.type_identifier),
 
-        number_literal: $ => choice(
-            /\d+/,
-            /0x\d+/,
-            /0b\d+/,
-        ),
+        number_literal: $ => token(choice(
+            /-?\d+/, //int
+            /-?0x[0-9a-fA-F]+/, // Hex
+            /-?0b[01]+/, // Binary
+            /-?0o[0-7]+/, // Octal
+            /-?\d+(.\d+)?[DF]?/ // Float/Double
+        )),
 
         _number: $ => choice(
-            $.number_literal,
-            $.identifier,
+            prec(3, $.number_literal),
+            // $.identifier,
         ),
 
         _operator: $=> choice(
-
+            $.unary_numeric_operator,
+            $.binary_numeric_operator,
+            $.ternary_numeric_operator
         ),
 
         _numeric_operator: $ => choice(
-            $._number,
-            $.unary_numeric_operator,
+            prec(4, $._number),
+            prec(2, $.unary_numeric_operator),
             $.binary_numeric_operator,
             $.ternary_numeric_operator,
         ),
 
-        unary_numeric_operator: $ => choice(
+        unary_numeric_operator: $ => prec(PREC.UNARY, choice(
             seq('~', $._expression),
             seq('!', $._expression),
             seq('(', $._expression, ')'),
-        ),
+        )),
 
-        binary_numeric_operator: $ => choice(
-            seq($._expression, '+', $._expression),
-            seq($._expression, '-', $._expression),
-            seq($._expression, '*', $._expression),
-            seq($._expression, '/', $._expression),
-            seq($._expression, '%', $._expression),
-            seq($._expression, '>>', $._expression),
-            seq($._expression, '<<', $._expression),
-            seq($._expression, '&', $._expression),
-            seq($._expression, '|', $._expression),
-            seq($._expression, '^', $._expression),
-            seq($._expression, '==', $._expression),
-            seq($._expression, '!=', $._expression),
-            seq($._expression, '>', $._expression),
-            seq($._expression, '<', $._expression),
-            seq($._expression, '>=', $._expression),
-            seq($._expression, '<=', $._expression),
-            seq($._expression, '&&', $._expression),
-            seq($._expression, '^^', $._expression),
+        binary_numeric_operator: $ => {
+            const table = [
+            ['+', PREC.ADD],
+            ['-', PREC.ADD],
+            ['*', PREC.MULT],
+            ['/', PREC.MULT],
+            ['%', PREC.MULT],
+            ['>>', PREC.SHIFT],
+            ['<<', PREC.SHIFT],
+            ['&', PREC.BITWISE_AND],
+            ['|', PREC.BITWISE_OR],
+            ['^', PREC.BITWISE_XOR],
+            ['==', PREC.EQ],
+            ['!=', PREC.EQ],
+            ['>', PREC.EQ],
+            ['<', PREC.EQ],
+            ['>=', PREC.EQ],
+            ['<=', PREC.EQ],
+            ['&&', PREC.AND],
+            ['||', PREC.OR],
+            ['^^', PREC.XOR]
+            ];
             // ...
-        ),
+            return choice(...table.map(([operator, precedence]) => {
+                return prec.left(precedence, seq(
+                    field('left', $._expression),
+                    field('operator', operator),
+                    field('right', $._expression)
+                ))
+            }));
+        },
 
-        ternary_numeric_operator: $ => choice(
-            seq($._expression, ':', $._expression,'?', $._expression),
-        ),
+        ternary_numeric_operator: $ => prec.left(PREC.TERNARY, seq(
+            field('cond', $._expression),
+            '?',
+            field('iftrue', $._expression),
+            ':',
+            field('iffalse', $._expression),
+        )),
 
         //https://github.com/tree-sitter/tree-sitter-c/blob/master/grammar.js
         string_literal: $ => seq(

@@ -12,6 +12,12 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
     - [ ] Literals
 - [X] Comments
 - [ ] Mathematical expressions
+    - [X] Numeric Operators
+    - [ ] Type Operators
+    - [ ] String Operators
+    - [ ] Member Access
+    - [ ] Dollar Operator
+    - [ ] Casting Operator
 - [X] Variable placement
 - [X] Arrays
     - [ ] Loop sized arrays
@@ -27,4 +33,3 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
 - [ ] In / Out variables
 - [ ] Preprocessor
 - [ ] Standard Library
-- [ ] Dollar
