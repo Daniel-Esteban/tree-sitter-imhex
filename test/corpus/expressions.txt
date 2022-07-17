@@ -1,4 +1,93 @@
 ==================
+Literals
+==================
+
+a = -1;
+a =  2;
+a = -150.0;
+a = 150.0;
+a = 150.0F;
+a = 150.0D;
+a = 0xFA05;
+a = 0b100101;
+a = 0o7620;
+a = -0xFA05;
+a = -0b100101;
+a = -0o7620;
+a = "This is a string";
+a = "This is\na string";
+a = "";
+a = true;
+a = false;
+a = 'G';
+a = '';
+a = '\n';
+
+---
+(source_file
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (number_literal))
+  (assignation_statement
+    (identifier)
+      (string_literal))
+  (assignation_statement
+    (identifier)
+      (string_literal (escape_sequence)))
+  (assignation_statement
+    (identifier)
+      (string_literal))
+  (assignation_statement
+    (identifier)
+      (boolean_literal))
+  (assignation_statement
+    (identifier)
+      (boolean_literal))
+  (assignation_statement
+    (identifier)
+      (character_literal))
+  (assignation_statement
+    (identifier)
+      (character_literal))
+  (assignation_statement
+    (identifier)
+      (character_literal (escape_sequence)))
+)
+
+==================
 Simple unary expressions
 ==================
 

@@ -181,7 +181,9 @@ module.exports = grammar({
             $.identifier,
             $._number,
             $._operator,
-            $.string_literal
+            $.string_literal,
+            $.character_literal,
+            $.boolean_literal
             // TODO: other kinds of expressions
         ),
 
@@ -191,13 +193,14 @@ module.exports = grammar({
 
         number_literal: $ => token(choice(
             /-?\d+/, //int
+            /\d+U/, //int
             /-?0x[0-9a-fA-F]+/, // Hex
             /-?0b[01]+/, // Binary
             /-?0o[0-7]+/, // Octal
             /-?\d+(.\d+)?[DF]?/ // Float/Double
         )),
 
-        _number: $ => choice(
+        _number: $ => choice( //TODO: Remove?
             prec(3, $.number_literal),
             // $.identifier,
         ),
@@ -270,6 +273,20 @@ module.exports = grammar({
             )),
             '"',
         ),
+
+        character_literal: $=> seq(
+            '\'',
+            optional(choice(
+                $.escape_sequence,
+                token.immediate(/[^\n']/)
+            )),
+            '\''
+        ),
+
+        boolean_literal: $=> token(prec(1,choice(
+            'true',
+            'false'
+        ))),
 
         escape_sequence: $ => token(prec(1, seq(
             '\\',

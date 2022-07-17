@@ -9,7 +9,7 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
     - [X] Endianess
     - [X] Arrays
     - [ ] Using declarations
-    - [ ] Literals
+    - [X] Literals
 - [X] Comments
 - [ ] Mathematical expressions
     - [X] Numeric Operators
