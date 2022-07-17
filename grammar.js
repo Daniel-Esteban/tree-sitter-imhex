@@ -200,12 +200,12 @@ module.exports = grammar({
             /-?\d+(.\d+)?[DF]?/ // Float/Double
         )),
 
-        _number: $ => choice( //TODO: Remove?
+        _number: $ => choice( //TODO: Remove? distinguish float and integer?
             prec(3, $.number_literal),
             // $.identifier,
         ),
 
-        _operator: $=> choice(
+        _operator: $=> choice( // TODO: Maybe just call them operators?
             $.unary_numeric_operator,
             $.binary_numeric_operator,
             $.ternary_numeric_operator

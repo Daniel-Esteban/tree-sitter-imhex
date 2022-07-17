@@ -14,7 +14,7 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
 - [ ] Mathematical expressions
     - [X] Numeric Operators
     - [ ] Type Operators
-    - [ ] String Operators
+    - [X] String Operators
     - [ ] Member Access
     - [ ] Dollar Operator
     - [ ] Casting Operator
