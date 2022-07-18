@@ -13,10 +13,24 @@
           }
         ]
       },
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -27,6 +41,10 @@
         "multiple": false,
         "required": false,
         "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -55,6 +73,53 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "assignation_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "dollar",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "ternary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "unary_numeric_operator",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -122,17 +187,232 @@
   {
     "type": "binary_numeric_operator",
     "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "!=",
+            "named": false
+          },
+          {
+            "type": "%",
+            "named": false
+          },
+          {
+            "type": "&",
+            "named": false
+          },
+          {
+            "type": "&&",
+            "named": false
+          },
+          {
+            "type": "*",
+            "named": false
+          },
+          {
+            "type": "+",
+            "named": false
+          },
+          {
+            "type": "-",
+            "named": false
+          },
+          {
+            "type": "/",
+            "named": false
+          },
+          {
+            "type": "<",
+            "named": false
+          },
+          {
+            "type": "<<",
+            "named": false
+          },
+          {
+            "type": "<=",
+            "named": false
+          },
+          {
+            "type": "==",
+            "named": false
+          },
+          {
+            "type": ">",
+            "named": false
+          },
+          {
+            "type": ">=",
+            "named": false
+          },
+          {
+            "type": ">>",
+            "named": false
+          },
+          {
+            "type": "^",
+            "named": false
+          },
+          {
+            "type": "^^",
+            "named": false
+          },
+          {
+            "type": "|",
+            "named": false
+          },
+          {
+            "type": "||",
+            "named": false
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "character_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "define",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "binary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "dollar",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "ternary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "unary_numeric_operator",
           "named": true
         }
       ]
@@ -156,6 +436,10 @@
           "named": true
         },
         {
+          "type": "assignation_statement",
+          "named": true
+        },
+        {
           "type": "padding",
           "named": true
         },
@@ -167,9 +451,23 @@
     }
   },
   {
-    "type": "number_literal",
+    "type": "include",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "system_lib_string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "padding",
@@ -190,9 +488,148 @@
         "required": false,
         "types": [
           {
+            "type": "dollar",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "pragma_array_limit",
+          "named": true
+        },
+        {
+          "type": "pragma_base_address",
+          "named": true
+        },
+        {
+          "type": "pragma_endian",
+          "named": true
+        },
+        {
+          "type": "pragma_eval_depth",
+          "named": true
+        },
+        {
+          "type": "pragma_mime",
+          "named": true
+        },
+        {
+          "type": "pragma_once",
+          "named": true
+        },
+        {
+          "type": "pragma_pattern_limit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pragma_array_limit",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma_base_address",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma_endian",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "endian_val",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma_eval_depth",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma_mime",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "mime_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "pragma_pattern_limit",
+    "named": true,
+    "fields": {
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
           {
             "type": "number_literal",
             "named": true
@@ -212,14 +649,42 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "binary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "dollar",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "ternary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "unary_numeric_operator",
           "named": true
         }
       ]
@@ -235,6 +700,22 @@
       "types": [
         {
           "type": "array_definition",
+          "named": true
+        },
+        {
+          "type": "assignation_statement",
+          "named": true
+        },
+        {
+          "type": "define",
+          "named": true
+        },
+        {
+          "type": "include",
+          "named": true
+        },
+        {
+          "type": "pragma",
           "named": true
         },
         {
@@ -300,6 +781,10 @@
         "required": true,
         "types": [
           {
+            "type": "dollar",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -308,22 +793,140 @@
     }
   },
   {
+    "type": "system_lib_string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "ternary_numeric_operator",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number_literal",
-          "named": true
-        }
-      ]
+    "fields": {
+      "cond": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      },
+      "iffalse": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      },
+      "iftrue": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -332,14 +935,42 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "binary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
+        {
+          "type": "character_literal",
+          "named": true
+        },
+        {
+          "type": "dollar",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "ternary_numeric_operator",
+          "named": true
+        },
+        {
+          "type": "unary_numeric_operator",
           "named": true
         }
       ]
@@ -374,6 +1005,10 @@
         "required": true,
         "types": [
           {
+            "type": "dollar",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -395,10 +1030,24 @@
           }
         ]
       },
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -439,10 +1088,24 @@
           }
         ]
       },
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": true,
         "required": true,
         "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -454,11 +1117,39 @@
         "required": true,
         "types": [
           {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
             "named": true
           }
         ]
@@ -496,6 +1187,18 @@
     "named": false
   },
   {
+    "type": "#define",
+    "named": false
+  },
+  {
+    "type": "#include",
+    "named": false
+  },
+  {
+    "type": "#pragma",
+    "named": false
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -505,6 +1208,10 @@
   },
   {
     "type": "&&",
+    "named": false
+  },
+  {
+    "type": "'",
     "named": false
   },
   {
@@ -556,6 +1263,10 @@
     "named": false
   },
   {
+    "type": "=",
+    "named": false
+  },
+  {
     "type": "==",
     "named": false
   },
@@ -577,6 +1288,10 @@
   },
   {
     "type": "@",
+    "named": false
+  },
+  {
+    "type": "MIME",
     "named": false
   },
   {
@@ -604,7 +1319,15 @@
     "named": false
   },
   {
+    "type": "array_limit",
+    "named": false
+  },
+  {
     "type": "auto",
+    "named": false
+  },
+  {
+    "type": "base_address",
     "named": false
   },
   {
@@ -614,6 +1337,10 @@
   {
     "type": "bool",
     "named": false
+  },
+  {
+    "type": "boolean_literal",
+    "named": true
   },
   {
     "type": "char",
@@ -632,12 +1359,32 @@
     "named": false
   },
   {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "dollar",
+    "named": true
+  },
+  {
     "type": "double",
     "named": false
   },
   {
+    "type": "endian",
+    "named": false
+  },
+  {
+    "type": "endian_val",
+    "named": true
+  },
+  {
     "type": "escape_sequence",
     "named": true
+  },
+  {
+    "type": "eval_depth",
+    "named": false
   },
   {
     "type": "float",
@@ -664,6 +1411,10 @@
     "named": false
   },
   {
+    "type": "mime_type",
+    "named": true
+  },
+  {
     "type": "name",
     "named": false
   },
@@ -672,12 +1423,24 @@
     "named": false
   },
   {
+    "type": "number_literal",
+    "named": true
+  },
+  {
     "type": "padding",
+    "named": false
+  },
+  {
+    "type": "pattern_limit",
     "named": false
   },
   {
     "type": "pointer_base",
     "named": false
+  },
+  {
+    "type": "pragma_once",
+    "named": true
   },
   {
     "type": "return",
@@ -753,6 +1516,10 @@
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "||",
     "named": false
   },
   {
