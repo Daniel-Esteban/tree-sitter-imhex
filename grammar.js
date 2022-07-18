@@ -31,7 +31,66 @@ module.exports = grammar({
             $.union_definition,
             $.variable_placement,
             $._definition_statement,
+            $._preproc_directive
         ),
+
+        _preproc_directive: $=> choice(
+            $.include,
+            $.define,
+            $.pragma
+        ),
+
+        include: $=> seq(
+            '#include',
+            choice(
+                $.string_literal,
+                $.system_lib_string
+            )
+        ),
+
+        system_lib_string: $ => (seq(
+            '<',
+            token(repeat(choice(/[^>\n]/, '\\>'))),
+            '>'
+        )),
+
+        define: $ => seq(
+            '#define',
+            $.identifier, //TODO: Typealias?
+            $._expression
+
+        ),
+
+        pragma: $ => seq(
+            '#pragma',
+            choice(
+                $.pragma_endian,
+                $.pragma_mime,
+                $.pragma_base_address,
+                $.pragma_eval_depth,
+                $.pragma_array_limit,
+                $.pragma_pattern_limit,
+                $.pragma_once,
+            ),
+        ),
+
+        pragma_endian: $=> seq('endian', field('value', $.endian_val)),
+
+        endian_val: $=> token(choice('little', 'big', 'native')),
+
+        pragma_mime: $=> seq('MIME', field('value', $.mime_type)),
+
+        mime_type: $=> token( /[\w\-\.]+\/[\w\-\.]+/ ),
+
+        pragma_base_address: $=> seq('base_address', field('value', $.number_literal)), // Only integer
+
+        pragma_eval_depth: $=> seq('eval_depth', field('value', $.number_literal)), // Only integer
+
+        pragma_array_limit: $=> seq('array_limit', field('value', $.number_literal)), // Only integer
+
+        pragma_pattern_limit: $=> seq('pattern_limit', field('value', $.number_literal)), // Only integer
+
+        pragma_once: $=> token('once'),
 
         struct_definition: $ => seq(
             'struct',

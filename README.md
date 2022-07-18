@@ -31,5 +31,5 @@ inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
 - [ ] Functions
 - [X] Attributes
 - [ ] In / Out variables
-- [ ] Preprocessor
+- [X] Preprocessor
 - [ ] Standard Library

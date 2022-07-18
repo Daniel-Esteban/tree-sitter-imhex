@@ -3,6 +3,7 @@
   "union"
   "padding"
   "return"
+  (endian_val)
 ] @keyword
 
 [
@@ -53,3 +54,13 @@
 (attribute) @attribute
 (comment) @comment
 (dollar) @constant.builtin
+(pragma (_) @parameter) @keyword
+(include) @include
+(include
+  (system_lib_string
+    ["<" ">"] @punctuation.bracket
+  )@namespace
+)
+(define) @keyword
+
+(ERROR) @error

@@ -1,0 +1,62 @@
+==================
+Define
+==================
+
+#define MY_CONST 0x10
+#define MY_ONST "This is a string"
+#define MY_ONST a + b
+
+---
+(source_file
+  (define
+    (identifier)
+    (number_literal))
+  (define
+    (identifier)
+    (string_literal))
+  (define
+    (identifier)
+    (binary_numeric_operator
+      left: (identifier)
+      right: (identifier)))
+)
+
+==================
+Pragma
+==================
+
+#pragma once
+#pragma endian little
+#pragma endian big
+#pragma endian native
+#pragma MIME text/plain
+#pragma base_address 0x4F00
+#pragma eval_depth 5000
+#pragma array_limit 850
+#pragma pattern_limit 40000
+
+---
+(source_file
+  (pragma (pragma_once))
+  (pragma (pragma_endian value: (endian_val)))
+  (pragma (pragma_endian value: (endian_val)))
+  (pragma (pragma_endian value: (endian_val)))
+  (pragma (pragma_mime value: (mime_type)))
+  (pragma (pragma_base_address value: (number_literal)))
+  (pragma (pragma_eval_depth value: (number_literal)))
+  (pragma (pragma_array_limit value: (number_literal)))
+  (pragma (pragma_pattern_limit value: (number_literal)))
+)
+
+==================
+Include
+==================
+
+#include"path/to/file.pat"
+#include<path/to/file.pat>
+
+---
+(source_file
+  (include (string_literal))
+  (include (system_lib_string))
+)
