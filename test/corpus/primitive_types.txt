@@ -131,4 +131,16 @@ be u32 ident;
     name: (identifier))
 )
 
+==================
+Using declaration
+==================
 
+using Offset = le u32;
+
+---
+(source_file
+  (using_definition
+    name: (identifier)
+    endian: (endian_indicator)
+    type: (primitive_type))
+)

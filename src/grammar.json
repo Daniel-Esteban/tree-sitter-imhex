@@ -5,10 +5,10 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_definition"
+        "name": "_top_level_statement"
       }
     },
-    "_definition": {
+    "_top_level_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -30,6 +30,10 @@
         {
           "type": "SYMBOL",
           "name": "_preproc_directive"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "using_definition"
         }
       ]
     },
@@ -371,6 +375,35 @@
         {
           "type": "SYMBOL",
           "name": "assignation_statement"
+        }
+      ]
+    },
+    "using_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "using"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },
@@ -910,8 +943,12 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "primitive_type"
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "primitive_type"
+          }
         }
       ]
     },

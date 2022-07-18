@@ -2,6 +2,7 @@
   "struct"
   "union"
   "padding"
+  "using"
   "return"
   (endian_val)
 ] @keyword

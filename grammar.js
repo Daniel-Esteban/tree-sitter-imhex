@@ -24,14 +24,15 @@ module.exports = grammar({
     ],
 
     rules: {
-        source_file: $ => repeat($._definition),
+        source_file: $ => repeat($._top_level_statement),
 
-        _definition: $ => choice(
+        _top_level_statement: $ => choice(
             $.struct_definition,
             $.union_definition,
             $.variable_placement,
             $._definition_statement,
-            $._preproc_directive
+            $._preproc_directive,
+            $.using_definition,
         ),
 
         _preproc_directive: $=> choice(
@@ -110,6 +111,14 @@ module.exports = grammar({
             $.variable_definition,
             $.array_definition,
             $.assignation_statement
+        ),
+
+        using_definition: $=> seq(
+            'using',
+            field('name', $.identifier),
+            '=',
+            $._type,
+            ';'
         ),
 
         variable_definition: $ => seq(
@@ -206,7 +215,7 @@ module.exports = grammar({
 
         _primitive_type: $ => seq(
             field('endian', optional($.endian_indicator)),
-            $.primitive_type,
+            field('type', $.primitive_type),
         ),
 
         endian_indicator: $ => choice(

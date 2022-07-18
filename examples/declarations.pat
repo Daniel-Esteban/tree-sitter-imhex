@@ -18,3 +18,5 @@ auto ident;
 
 u8 array[50];
 u8 arr[];
+
+using Offset = be u32;

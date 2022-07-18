@@ -49,11 +49,11 @@ Finally, in NeoVim:
 ```
 
 ## TODO List
-- [ ] Data Types
+- [X] Data Types
     - [X] Built-in Types
     - [X] Endianess
     - [X] Arrays
-    - [ ] Using declarations
+    - [X] Using declarations
     - [X] Literals
 - [X] Comments
 - [ ] Mathematical expressions

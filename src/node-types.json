@@ -727,6 +727,10 @@
           "named": true
         },
         {
+          "type": "using_definition",
+          "named": true
+        },
+        {
           "type": "variable_definition",
           "named": true
         },
@@ -1014,6 +1018,52 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "using_definition",
+    "named": true,
+    "fields": {
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "type_identifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1356,11 +1406,11 @@
   },
   {
     "type": "comment",
-    "named": false
+    "named": true
   },
   {
     "type": "comment",
-    "named": true
+    "named": false
   },
   {
     "type": "dollar",
@@ -1508,6 +1558,10 @@
   },
   {
     "type": "union",
+    "named": false
+  },
+  {
+    "type": "using",
     "named": false
   },
   {
