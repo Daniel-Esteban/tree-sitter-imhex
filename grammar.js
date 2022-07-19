@@ -240,6 +240,7 @@ module.exports = grammar({
         _statement: $ => choice (
             $._definition_statement,
             $.if_statement,
+            $._function_call_statement,
             $.return_statement
         ),
 
@@ -257,7 +258,7 @@ module.exports = grammar({
             $.character_literal,
             $.boolean_literal,
             $.field_expression,
-            // TODO: other kinds of expressions
+            $.function_call,
         ),
 
         _identifier: $ => choice(
@@ -374,13 +375,27 @@ module.exports = grammar({
             ))
         )),
 
+
+        _function_call_statement: $=> seq($.function_call, ';'),
+
+        function_call: $=> seq(
+            field('name', $.identifier),
+            '(',
+            optional(field('parameters', $.function_call_parameters)),
+            ')'
+        ),
+
+        function_call_parameters: $=> seq(
+            field('parameter', $.identifier),
+            repeat(seq(',', field('parameter', $.identifier)))
+        ),
+
         function_definition: $=> seq(
             'fn',
             field('name', $.identifier),
             field('parameters', $.parameters_definition),
             field('block', choice($.block, $._statement)),
             ';'
-
         ),
 
         parameters_definition: $=> seq(

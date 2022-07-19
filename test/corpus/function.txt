@@ -90,3 +90,29 @@ fn myfunc(u8 arg1, u8 arg2, u8 ... args) {};
     block: (block)
   )
 )
+
+==================
+Function call
+==================
+
+myfunc();
+myfunc(arg1);
+myfunc(arg1, arg2);
+
+---
+(source_file
+  (function_call
+    name: (identifier)
+  )
+  (function_call
+    name: (identifier)
+    parameters: (function_call_parameters
+      parameter: (identifier))
+  )
+  (function_call
+    name: (identifier)
+    parameters: (function_call_parameters
+      parameter: (identifier)
+      parameter: (identifier))
+  )
+)
