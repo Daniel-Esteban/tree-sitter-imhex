@@ -143,7 +143,7 @@ module.exports = grammar({
 
         assignation_statement: $ => seq(
             field('left', $._identifier),
-            field('operator', '='),
+            field('operator', choice('=', '+=', '-=')),
             field('right', $._expression),
             ';' // TODO: Optional?
         ),

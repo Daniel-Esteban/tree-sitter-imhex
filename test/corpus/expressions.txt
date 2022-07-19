@@ -3,9 +3,17 @@ Assignations
 ==================
 
 a = 1;
+a += 1;
+a -= 1;
 
 ---
 (source_file
+  (assignation_statement
+    left: (identifier)
+    right: (number_literal))
+  (assignation_statement
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
     left: (identifier)
     right: (number_literal))
