@@ -1,4 +1,17 @@
 ==================
+Assignations
+==================
+
+a = 1;
+
+---
+(source_file
+  (assignation_statement
+    left: (identifier)
+    right: (number_literal))
+)
+
+==================
 Literals
 ==================
 
@@ -26,65 +39,65 @@ a = '\n';
 ---
 (source_file
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (number_literal))
+    left: (identifier)
+    right: (number_literal))
   (assignation_statement
-    (identifier)
-      (string_literal))
+    left: (identifier)
+    right: (string_literal))
   (assignation_statement
-    (identifier)
-      (string_literal (escape_sequence)))
+    left: (identifier)
+    right: (string_literal (escape_sequence)))
   (assignation_statement
-    (identifier)
-      (string_literal))
+    left: (identifier)
+    right: (string_literal))
   (assignation_statement
-    (identifier)
-      (boolean_literal))
+    left: (identifier)
+    right: (boolean_literal))
   (assignation_statement
-    (identifier)
-      (boolean_literal))
+    left: (identifier)
+    right: (boolean_literal))
   (assignation_statement
-    (identifier)
-      (character_literal))
+    left: (identifier)
+    right: (character_literal))
   (assignation_statement
-    (identifier)
-      (character_literal))
+    left: (identifier)
+    right: (character_literal))
   (assignation_statement
-    (identifier)
-      (character_literal (escape_sequence)))
+    left: (identifier)
+    right: (character_literal (escape_sequence)))
 )
 
 ==================
@@ -98,16 +111,16 @@ a = !1;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (unary_numeric_operator
+    left: (identifier)
+    right: (unary_numeric_operator
       (number_literal)))
   (assignation_statement
-    (identifier)
-    (unary_numeric_operator
+    left: (identifier)
+    right: (unary_numeric_operator
       (identifier)))
   (assignation_statement
-    (identifier)
-    (unary_numeric_operator
+    left: (identifier)
+    right: (unary_numeric_operator
       (number_literal)))
 )
 
@@ -138,98 +151,98 @@ a = 1 ^^ 3;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (number_literal)))
 )
@@ -243,8 +256,8 @@ u8 addr @ $ + 0x10;
 ---
 (source_file
   (assignation_statement
-    (dollar)
-    (number_literal))
+    left: (dollar)
+    right: (number_literal))
   (variable_placement
     type: (primitive_type)
     name: (identifier)
@@ -270,43 +283,43 @@ a = "This is" <= "Another string";
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (number_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (string_literal)
       right: (string_literal)))
 )
@@ -319,8 +332,8 @@ a = 1? 2: 3;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (ternary_numeric_operator
+    left: (identifier)
+    right: (ternary_numeric_operator
       cond: (number_literal)
       iftrue: (number_literal)
       iffalse: (number_literal)))
@@ -334,8 +347,8 @@ a = 1 + b * c;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (binary_numeric_operator
+    left: (identifier)
+    right: (binary_numeric_operator
       left: (number_literal)
       right: (binary_numeric_operator
         left: (identifier)
@@ -352,8 +365,8 @@ a = (b % 2) == 0 ? a * b : b / 2 ;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (ternary_numeric_operator
+    left: (identifier)
+    right: (ternary_numeric_operator
       cond: (binary_numeric_operator
         left: (unary_numeric_operator
           (binary_numeric_operator
@@ -380,13 +393,13 @@ myvar.myfield = 5.48;
 ---
 (source_file
   (assignation_statement
-    (identifier)
-    (field_expression
+    left: (identifier)
+    right: (field_expression
       parent: (identifier)
       field: (field_identifier)))
   (assignation_statement
-    (field_expression
+    left: (field_expression
       parent: (identifier)
       field: (field_identifier))
-    (number_literal))
+    right: (number_literal))
 )

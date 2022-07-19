@@ -96,8 +96,8 @@ struct mystruct {
         type: (primitive_type)
         name: (identifier))
       (assignation_statement
-        (dollar)
-        (binary_numeric_operator
+        left: (dollar)
+        right: (binary_numeric_operator
           left: (dollar)
           right: (number_literal)))
       (variable_definition
@@ -121,8 +121,8 @@ struct mystruct {
     name: (identifier)
     body: (field_list
       (assignation_statement
-        (dollar)
-        (parent_access
+        left: (dollar)
+        right: (parent_access
           field: (field_identifier))))
   )
 )
