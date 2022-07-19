@@ -3,6 +3,7 @@
   "union"
   "padding"
   "using"
+  "fn"
   "return"
   (parent)
   (endian_val)

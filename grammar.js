@@ -33,6 +33,7 @@ module.exports = grammar({
             $._statement,
             $._preproc_directive,
             $.using_definition,
+            $.function_definition,
         ),
 
         _preproc_directive: $=> choice(
@@ -372,6 +373,39 @@ module.exports = grammar({
                 field('else', choice($.block, $._statement))
             ))
         )),
+
+        function_definition: $=> seq(
+            'fn',
+            field('name', $.identifier),
+            field('parameters', $.parameters_definition),
+            field('block', choice($.block, $._statement)),
+            ';'
+
+        ),
+
+        parameters_definition: $=> seq(
+            '(',
+            optional(choice(
+                seq(
+                    field('parameter', $.parameter_definition),
+                    repeat(seq(',', field('parameter',$.parameter_definition))),
+                    optional(seq(',', field('pack', $.parameter_pack))),
+                ),
+                field('pack', $.parameter_pack),
+            )),
+            ')'
+        ),
+
+        parameter_definition: $=> seq(
+            field('type', $._type),
+            field('name', $._identifier),
+        ),
+
+        parameter_pack: $=> seq(
+            field('type', $._type),
+            '...',
+            field('name', $._identifier)
+        ),
 
         //https://github.com/tree-sitter/tree-sitter-c/blob/master/grammar.js
         string_literal: $ => seq(

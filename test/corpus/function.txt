@@ -1,0 +1,92 @@
+==================
+Simple function definition
+==================
+
+fn myfunc() {
+
+};
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameters_definition)
+    block: (block)
+  )
+)
+
+==================
+Function definition with args
+==================
+
+fn myfunc(u8 arg1) {};
+fn myfunc(u8 arg1, auto arg2) {};
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameters_definition
+      parameter: (parameter_definition
+        type: (primitive_type)
+        name: (identifier))
+    )
+    block: (block)
+  )
+  (function_definition
+    name: (identifier)
+    parameters: (parameters_definition
+      parameter: (parameter_definition
+        type: (primitive_type)
+        name: (identifier))
+      parameter: (parameter_definition
+        type: (primitive_type)
+        name: (identifier))
+    )
+    block: (block)
+  )
+)
+
+==================
+Function definition with pack
+==================
+
+fn myfunc(u8 ... args) {};
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameters_definition
+      pack: (parameter_pack
+        type: (primitive_type)
+        name: (identifier))
+    )
+    block: (block)
+  )
+)
+
+==================
+Function definition with args and pack
+==================
+
+fn myfunc(u8 arg1, u8 arg2, u8 ... args) {};
+
+---
+(source_file
+  (function_definition
+    name: (identifier)
+    parameters: (parameters_definition
+      parameter: (parameter_definition
+        type: (primitive_type)
+        name: (identifier))
+      parameter: (parameter_definition
+        type: (primitive_type)
+        name: (identifier))
+      pack: (parameter_pack
+        type: (primitive_type)
+        name: (identifier))
+    )
+    block: (block)
+  )
+)

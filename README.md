@@ -73,7 +73,7 @@ Finally, in NeoVim:
 - [ ] Bitfields
 - [X] Conditionals
 - [ ] Namespaces
-- [ ] Functions
+- [X] Functions
 - [X] Attributes
 - [ ] In / Out variables
 - [X] Preprocessor
