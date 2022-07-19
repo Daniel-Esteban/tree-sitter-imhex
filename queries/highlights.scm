@@ -65,5 +65,6 @@
 )
 (define) @keyword
 (field_identifier) @field
+(this) @field
 
 (ERROR) @error

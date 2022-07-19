@@ -126,3 +126,31 @@ struct mystruct {
           field: (field_identifier))))
   )
 )
+
+==================
+This
+==================
+struct mystruct {
+    u8 offset;
+    $ += this.offset;
+    u8 val;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier))
+      (assignation_statement
+        left: (dollar)
+        right: (field_expression
+          parent: (this)
+          field: (field_identifier)))
+      (variable_definition
+        type: (primitive_type)
+        name: (identifier)))
+  )
+)

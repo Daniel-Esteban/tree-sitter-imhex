@@ -1135,10 +1135,6 @@
         {
           "type": "SYMBOL",
           "name": "boolean_literal"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "parent_access"
         }
       ]
     },
@@ -1156,6 +1152,14 @@
         {
           "type": "SYMBOL",
           "name": "field_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "this"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "parent_access"
         }
       ]
     },
@@ -1166,6 +1170,10 @@
     "dollar": {
       "type": "STRING",
       "value": "$"
+    },
+    "this": {
+      "type": "STRING",
+      "value": "this"
     },
     "_type_identifier": {
       "type": "ALIAS",
@@ -1193,7 +1201,7 @@
           "name": "parent",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_identifier"
           }
         },
         {

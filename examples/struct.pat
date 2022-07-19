@@ -3,6 +3,7 @@ struct mystruct {
     u16 ident;
     u32 ident;
     u64 ident, xx, yy;
+    $ += parent.offset - this.ident;
 };
 
 struct MyStruct {
