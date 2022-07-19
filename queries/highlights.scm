@@ -44,6 +44,8 @@
 
 [ ";" "," ] @punctuation.delimiter
 
+[ "if" "else" ] @conditional
+
 (identifier) @variable
 (primitive_type) @type.builtin
 (endian_indicator) @type.builtin

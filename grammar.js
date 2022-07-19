@@ -30,7 +30,7 @@ module.exports = grammar({
             $.struct_definition,
             $.union_definition,
             $.variable_placement,
-            $._definition_statement,
+            $._statement,
             $._preproc_directive,
             $.using_definition,
         ),
@@ -180,13 +180,7 @@ module.exports = grammar({
 
         field_list: $ => seq(
             '{',
-            repeat(choice($._definition_statement, $.padding)),
-            '}',
-        ),
-
-        block: $ => seq( //TODO: use this instead of field_list?
-            '{',
-            repeat($._block_statement),
+            repeat(choice($._statement, $.padding)),
             '}',
         ),
 
@@ -244,6 +238,7 @@ module.exports = grammar({
 
         _statement: $ => choice (
             $._definition_statement,
+            $.if_statement,
             $.return_statement
         ),
 
@@ -360,6 +355,22 @@ module.exports = grammar({
             field('iftrue', $._expression),
             ':',
             field('iffalse', $._expression),
+        )),
+
+        _condition: $=> seq(
+            '(',
+            field('condition', $._expression),
+            ')',
+        ),
+
+        if_statement: $=> prec.left(1, seq(
+            'if',
+            $._condition,
+            field('body', choice($.block, $._statement)),
+            optional(seq(
+                'else',
+                field('else', choice($.block, $._statement))
+            ))
         )),
 
         //https://github.com/tree-sitter/tree-sitter-c/blob/master/grammar.js

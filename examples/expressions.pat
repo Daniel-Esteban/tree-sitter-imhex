@@ -28,4 +28,7 @@ a = b ^^ ~c / 0,8D;
 a = (b % 2) == 0 ? a * b : b / 2 ;
 
 a = myvar.myfield;
-myvar.myfield = a;
+
+if (a > 5) {
+    a += 2;
+}

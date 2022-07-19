@@ -71,7 +71,7 @@ Finally, in NeoVim:
 - [X] Unions
 - [ ] Enums
 - [ ] Bitfields
-- [ ] Conditionals
+- [X] Conditionals
 - [ ] Namespaces
 - [ ] Functions
 - [X] Attributes

@@ -402,6 +402,37 @@
     }
   },
   {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "array_definition",
+          "named": true
+        },
+        {
+          "type": "assignation_statement",
+          "named": true
+        },
+        {
+          "type": "if_statement",
+          "named": true
+        },
+        {
+          "type": "return_statement",
+          "named": true
+        },
+        {
+          "type": "variable_definition",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "character_literal",
     "named": true,
     "fields": {},
@@ -523,7 +554,15 @@
           "named": true
         },
         {
+          "type": "if_statement",
+          "named": true
+        },
+        {
           "type": "padding",
+          "named": true
+        },
+        {
+          "type": "return_statement",
           "named": true
         },
         {
@@ -531,6 +570,118 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "if_statement",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array_definition",
+            "named": true
+          },
+          {
+            "type": "assignation_statement",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "variable_definition",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "array_definition",
+            "named": true
+          },
+          {
+            "type": "assignation_statement",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "if_statement",
+            "named": true
+          },
+          {
+            "type": "return_statement",
+            "named": true
+          },
+          {
+            "type": "variable_definition",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -798,11 +949,19 @@
           "named": true
         },
         {
+          "type": "if_statement",
+          "named": true
+        },
+        {
           "type": "include",
           "named": true
         },
         {
           "type": "pragma",
+          "named": true
+        },
+        {
+          "type": "return_statement",
           "named": true
         },
         {
@@ -1525,11 +1684,11 @@
   },
   {
     "type": "comment",
-    "named": false
+    "named": true
   },
   {
     "type": "comment",
-    "named": true
+    "named": false
   },
   {
     "type": "dollar",
@@ -1537,6 +1696,10 @@
   },
   {
     "type": "double",
+    "named": false
+  },
+  {
+    "type": "else",
     "named": false
   },
   {
@@ -1574,6 +1737,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "if",
+    "named": false
   },
   {
     "type": "inline",
