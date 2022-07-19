@@ -106,3 +106,23 @@ struct mystruct {
     )
   )
 )
+
+==================
+Parent access
+==================
+
+struct mystruct {
+    $ = parent.offset;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (assignation_statement
+        (dollar)
+        (parent_access
+          field: (field_identifier))))
+  )
+)

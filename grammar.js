@@ -252,17 +252,32 @@ module.exports = grammar({
             $._operator,
             $.string_literal,
             $.character_literal,
-            $.boolean_literal
+            $.boolean_literal,
+            $.parent_access,
             // TODO: other kinds of expressions
         ),
 
-        _identifier: $ => choice($.identifier, $.dollar),
+        _identifier: $ => choice($.identifier, $.dollar, $.field_expression),
 
         identifier: $ => /[a-zA-Z_]\w*/,
 
         dollar: $=> '$',
 
         _type_identifier: $ => alias($.identifier, $.type_identifier),
+
+        _field_identifier: $ => alias($.identifier, $.field_identifier),
+
+        field_expression: $=> seq(
+            field('parent', $.identifier),
+            '.',
+            field('field', $._field_identifier),
+        ),
+
+        parent_access: $=> seq(
+            field('parent', 'parent'),
+            '.',
+            field('field', $._field_identifier),
+        ),
 
         number_literal: $ => token(choice(
             /-?\d+/, //int

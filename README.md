@@ -60,7 +60,7 @@ Finally, in NeoVim:
     - [X] Numeric Operators
     - [ ] Type Operators
     - [X] String Operators
-    - [ ] Member Access
+    - [X] Member Access
     - [X] Dollar Operator
     - [ ] Casting Operator
 - [X] Variable placement

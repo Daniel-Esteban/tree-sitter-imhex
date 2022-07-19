@@ -369,3 +369,24 @@ a = (b % 2) == 0 ? a * b : b / 2 ;
     )
   )
 )
+
+==================
+Field identifiers
+==================
+
+a = myvar.field;
+myvar.myfield = 5.48;
+
+---
+(source_file
+  (assignation_statement
+    (identifier)
+    (field_expression
+      parent: (identifier)
+      field: (field_identifier)))
+  (assignation_statement
+    (field_expression
+      parent: (identifier)
+      field: (field_identifier))
+    (number_literal))
+)

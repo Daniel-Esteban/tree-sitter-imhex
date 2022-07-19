@@ -3,6 +3,7 @@
   "union"
   "padding"
   "using"
+  "parent"
   "return"
   (endian_val)
 ] @keyword
@@ -63,5 +64,6 @@
   )@namespace
 )
 (define) @keyword
+(field_identifier) @field
 
 (ERROR) @error

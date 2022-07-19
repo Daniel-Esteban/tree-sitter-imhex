@@ -32,6 +32,10 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -43,6 +47,10 @@
         "types": [
           {
             "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -100,11 +108,19 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parent_access",
           "named": true
         },
         {
@@ -209,11 +225,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -333,11 +357,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -396,11 +428,19 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parent_access",
           "named": true
         },
         {
@@ -422,6 +462,32 @@
     "type": "endian_indicator",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "field_expression",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_identifier",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "field_list",
@@ -492,12 +558,42 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
             "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "parent_access",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field_identifier",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parent",
+            "named": false
           }
         ]
       }
@@ -668,11 +764,19 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parent_access",
           "named": true
         },
         {
@@ -789,6 +893,10 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -826,11 +934,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -868,11 +984,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -910,11 +1034,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -958,11 +1090,19 @@
           "named": true
         },
         {
+          "type": "field_expression",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
         {
           "type": "number_literal",
+          "named": true
+        },
+        {
+          "type": "parent_access",
           "named": true
         },
         {
@@ -1010,6 +1150,10 @@
         "types": [
           {
             "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -1099,6 +1243,10 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -1157,6 +1305,10 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           }
@@ -1183,11 +1335,19 @@
             "named": true
           },
           {
+            "type": "field_expression",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "parent_access",
             "named": true
           },
           {
@@ -1286,6 +1446,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
     "named": false
   },
   {
@@ -1437,6 +1601,10 @@
     "named": false
   },
   {
+    "type": "field_identifier",
+    "named": true
+  },
+  {
     "type": "float",
     "named": false
   },
@@ -1478,6 +1646,10 @@
   },
   {
     "type": "padding",
+    "named": false
+  },
+  {
+    "type": "parent",
     "named": false
   },
   {
