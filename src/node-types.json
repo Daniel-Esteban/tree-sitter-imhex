@@ -32,19 +32,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -58,23 +46,11 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -112,19 +88,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -180,19 +144,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -302,19 +258,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -438,19 +386,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -513,19 +453,11 @@
           "named": true
         },
         {
-          "type": "parent_access",
-          "named": true
-        },
-        {
           "type": "string_literal",
           "named": true
         },
         {
           "type": "ternary_numeric_operator",
-          "named": true
-        },
-        {
-          "type": "this",
           "named": true
         },
         {
@@ -545,7 +477,7 @@
     "named": true,
     "fields": {
       "field": {
-        "multiple": false,
+        "multiple": true,
         "required": true,
         "types": [
           {
@@ -559,19 +491,11 @@
         "required": true,
         "types": [
           {
-            "type": "dollar",
-            "named": true
-          },
-          {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
           {
-            "type": "parent_access",
+            "type": "parent",
             "named": true
           },
           {
@@ -651,50 +575,12 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
             "named": true
           },
           {
             "type": "number_literal",
             "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "parent_access",
-    "named": true,
-    "fields": {
-      "field": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "field_identifier",
-            "named": true
-          }
-        ]
-      },
-      "parent": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "parent",
-            "named": false
           }
         ]
       }
@@ -877,19 +763,11 @@
           "named": true
         },
         {
-          "type": "parent_access",
-          "named": true
-        },
-        {
           "type": "string_literal",
           "named": true
         },
         {
           "type": "ternary_numeric_operator",
-          "named": true
-        },
-        {
-          "type": "this",
           "named": true
         },
         {
@@ -998,19 +876,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -1059,19 +925,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -1113,19 +971,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -1167,19 +1017,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -1227,19 +1069,11 @@
           "named": true
         },
         {
-          "type": "parent_access",
-          "named": true
-        },
-        {
           "type": "string_literal",
           "named": true
         },
         {
           "type": "ternary_numeric_operator",
-          "named": true
-        },
-        {
-          "type": "this",
           "named": true
         },
         {
@@ -1282,19 +1116,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -1380,19 +1202,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -1450,19 +1260,7 @@
             "named": true
           },
           {
-            "type": "field_expression",
-            "named": true
-          },
-          {
             "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "parent_access",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           }
         ]
@@ -1500,19 +1298,11 @@
             "named": true
           },
           {
-            "type": "parent_access",
-            "named": true
-          },
-          {
             "type": "string_literal",
             "named": true
           },
           {
             "type": "ternary_numeric_operator",
-            "named": true
-          },
-          {
-            "type": "this",
             "named": true
           },
           {
@@ -1735,11 +1525,11 @@
   },
   {
     "type": "comment",
-    "named": true
+    "named": false
   },
   {
     "type": "comment",
-    "named": false
+    "named": true
   },
   {
     "type": "dollar",
@@ -1815,7 +1605,7 @@
   },
   {
     "type": "parent",
-    "named": false
+    "named": true
   },
   {
     "type": "pattern_limit",

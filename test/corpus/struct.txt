@@ -122,7 +122,30 @@ struct mystruct {
     body: (field_list
       (assignation_statement
         left: (dollar)
-        right: (parent_access
+        right: (field_expression
+          parent: (parent)
+          field: (field_identifier))))
+  )
+)
+
+==================
+Chaining parent access
+==================
+
+struct mystruct {
+    $ = parent.var1.offset;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (assignation_statement
+        left: (dollar)
+        right: (field_expression
+          parent: (parent)
+          field: (field_identifier)
           field: (field_identifier))))
   )
 )

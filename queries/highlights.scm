@@ -3,8 +3,8 @@
   "union"
   "padding"
   "using"
-  "parent"
   "return"
+  (parent)
   (endian_val)
 ] @keyword
 

@@ -396,7 +396,6 @@ Field identifiers
 ==================
 
 a = myvar.field;
-myvar.myfield = 5.48;
 
 ---
 (source_file
@@ -405,9 +404,20 @@ myvar.myfield = 5.48;
     right: (field_expression
       parent: (identifier)
       field: (field_identifier)))
+)
+
+==================
+Chaining field identifiers
+==================
+
+a = myvar.field.offset;
+
+---
+(source_file
   (assignation_statement
-    left: (field_expression
+    left: (identifier)
+    right: (field_expression
       parent: (identifier)
-      field: (field_identifier))
-    right: (number_literal))
+      field: (field_identifier)
+      field: (field_identifier)))
 )

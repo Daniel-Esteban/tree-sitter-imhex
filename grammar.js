@@ -184,6 +184,12 @@ module.exports = grammar({
             '}',
         ),
 
+        block: $ => seq( //TODO: use this instead of field_list?
+            '{',
+            repeat($._block_statement),
+            '}',
+        ),
+
         _declaration_finish: $ => seq(
             optional(field('attribute',$.attribute)), // TODO: Multiple attributes?
             ';'
@@ -237,6 +243,7 @@ module.exports = grammar({
         ),
 
         _statement: $ => choice (
+            $._definition_statement,
             $.return_statement
         ),
 
@@ -253,15 +260,13 @@ module.exports = grammar({
             $.string_literal,
             $.character_literal,
             $.boolean_literal,
+            $.field_expression,
             // TODO: other kinds of expressions
         ),
 
         _identifier: $ => choice(
             $.identifier,
             $.dollar,
-            $.field_expression,
-            $.this,
-            $.parent_access,
         ),
 
         identifier: $ => /[a-zA-Z_]\w*/,
@@ -270,21 +275,19 @@ module.exports = grammar({
 
         this: $=> 'this',
 
+        parent: $=> 'parent',
+
         _type_identifier: $ => alias($.identifier, $.type_identifier),
 
         _field_identifier: $ => alias($.identifier, $.field_identifier),
 
-        field_expression: $=> seq(
-            field('parent', $._identifier),
-            '.',
-            field('field', $._field_identifier),
-        ),
-
-        parent_access: $=> seq(
-            field('parent', 'parent'),
-            '.',
-            field('field', $._field_identifier),
-        ),
+        field_expression: $=> prec.left(1,seq(
+            field('parent', choice($.identifier, $.parent, $.this)),
+            repeat1(seq(
+                '.',
+                field('field', $._field_identifier)
+            )),
+        )),
 
         number_literal: $ => token(choice(
             /-?\d+/, //int
