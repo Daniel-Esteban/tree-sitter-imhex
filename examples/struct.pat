@@ -35,3 +35,9 @@ bitfield MyBitfield {
     padding: 6;
     c: 3;
 }
+
+enum StorageType : u16 {
+  Plain,    // 0x00
+  Compressed = 0x10,
+  Encrypted // 0x11
+};

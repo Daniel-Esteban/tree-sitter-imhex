@@ -57,7 +57,7 @@ Finally, in NeoVim:
 - [ ] Pointers
 - [X] Structs
 - [X] Unions
-- [ ] Enums
+- [X] Enums
 - [X] Bitfields
 - [X] Conditionals
 - [ ] Namespaces

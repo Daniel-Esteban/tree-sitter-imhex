@@ -1,0 +1,26 @@
+==================
+Simple enum
+==================
+
+enum StorageType : u16 {
+  Plain,
+  Compressed = 0x10,
+  Encrypted
+};
+
+---
+(source_file
+  (enum_definition
+    name: (identifier)
+    type: (primitive_type)
+    body: (enum_field_list
+        field: (enum_field
+          name: (identifier))
+        field: (enum_field
+          name: (identifier)
+          value: (number_literal))
+        field: (enum_field
+          name: (identifier))
+    )
+  )
+)

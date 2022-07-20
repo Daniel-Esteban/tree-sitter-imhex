@@ -30,6 +30,7 @@ module.exports = grammar({
             $.struct_definition,
             $.union_definition,
             $.bitfield_definition,
+            $.enum_definition,
             $.variable_placement,
             $._statement,
             $._preproc_directive,
@@ -114,6 +115,14 @@ module.exports = grammar({
             field('name', $._identifier),
             field('body', $.bitfield_list),
             $._declaration_finish
+        ),
+
+        enum_definition: $=> seq(
+            'enum',
+            field('name', $.identifier),
+            ':',
+            field('type', $.primitive_type),
+            field('body', $.enum_field_list)
         ),
 
         _definition_statement: $ => choice(
@@ -203,6 +212,18 @@ module.exports = grammar({
             ':',
             field('value', $.number_literal),
             ';' // TODO: can have attributes? $._declaration_finish?
+        ),
+
+        enum_field_list: $=> seq(
+            '{',
+            field('field', $.enum_field),
+            repeat(seq(',', field('field', $.enum_field))),
+            '}',
+            ';' // TODO: can have attributes? $._declaration_finish?
+        ),
+        enum_field: $=> seq(
+            field('name', $.identifier),
+            optional(seq('=', field('value', $.number_literal)))
         ),
 
         _declaration_finish: $ => seq(

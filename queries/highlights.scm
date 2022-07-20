@@ -25,12 +25,13 @@
 (field_identifier) @field
 (this) @field
 (bitfield_entry name:(identifier) @field)
+(enum_field name:(identifier) @field)
 
 ; Keywords
 [ "if" "else" ] @conditional
 [ "while" ] @repeat
 [
-  "struct" "union" "bitfield"
+  "struct" "union" "bitfield" "enum"
   "break" "continue"
   "padding"
   "using"

@@ -658,6 +658,84 @@
     "fields": {}
   },
   {
+    "type": "enum_definition",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "enum_field_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "enum_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "enum_field_list",
+    "named": true,
+    "fields": {
+      "field": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "enum_field",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "field_expression",
     "named": true,
     "fields": {
@@ -1492,6 +1570,10 @@
         },
         {
           "type": "define",
+          "named": true
+        },
+        {
+          "type": "enum_definition",
           "named": true
         },
         {
@@ -2559,6 +2641,10 @@
   {
     "type": "endian_val",
     "named": true
+  },
+  {
+    "type": "enum",
+    "named": false
   },
   {
     "type": "escape_sequence",
