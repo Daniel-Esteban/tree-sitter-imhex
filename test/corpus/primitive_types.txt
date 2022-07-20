@@ -177,3 +177,18 @@ u8 x[sizeof(y)];
     name: (identifier)
     size: (type_operator argument: (identifier)))
 )
+
+==================
+Casting operators
+==================
+
+x = u8(50.0);
+
+---
+(source_file
+  (assignation_statement
+    left: (identifier)
+    right: (casting_operator
+      function: (primitive_type)
+      argument: (number_literal)))
+)

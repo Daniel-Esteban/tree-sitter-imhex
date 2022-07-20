@@ -608,6 +608,10 @@
         {
           "type": "SYMBOL",
           "name": "type_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "casting_operator"
         }
       ]
     },
@@ -1186,6 +1190,10 @@
         {
           "type": "SYMBOL",
           "name": "type_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "casting_operator"
         }
       ]
     },
@@ -2406,15 +2414,6 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "_single_parameter_definition"
-        }
-      ]
-    },
-    "_single_parameter_definition": {
-      "type": "SEQ",
-      "members": [
-        {
           "type": "STRING",
           "value": "("
         },
@@ -2424,6 +2423,35 @@
           "content": {
             "type": "SYMBOL",
             "name": "_identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    },
+    "casting_operator": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "function",
+          "content": {
+            "type": "SYMBOL",
+            "name": "primitive_type"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "FIELD",
+          "name": "argument",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
           }
         },
         {

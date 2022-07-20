@@ -1,4 +1,5 @@
 (identifier) @variable
+(primitive_type) @type.builtin
 
 ; Misc
 (comment) @comment
@@ -20,6 +21,7 @@
 (function_definition name:(identifier) @function)
 (function_call name:(identifier) @function)
 ["addressof" "sizeof"] @function.builtin
+(casting_operator function:(primitive_type) @function.builtin)
 (field_identifier) @field
 (this) @field
 
@@ -55,7 +57,6 @@
 
 (type_identifier) @type
 (using_definition name: (identifier) @type)
-(primitive_type) @type.builtin
 (endian_indicator) @type.builtin
 (attribute) @attribute
 

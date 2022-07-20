@@ -51,13 +51,7 @@ Finally, in NeoVim:
 ## TODO List
 - [X] Data Types
 - [X] Comments
-- [ ] Mathematical expressions
-    - [X] Numeric Operators
-    - [X] Type Operators
-    - [X] String Operators
-    - [X] Member Access
-    - [X] Dollar Operator
-    - [ ] Casting Operator
+- [X] Mathematical expressions
 - [X] Variable placement
 - [X] Arrays
 - [ ] Pointers

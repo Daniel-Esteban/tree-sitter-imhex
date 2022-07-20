@@ -168,6 +168,7 @@ module.exports = grammar({
             $.loop_size,
             $.function_call,
             $.type_operator,
+            $.casting_operator,
         ),
 
         loop_size: $ => $._while_head,
@@ -261,6 +262,7 @@ module.exports = grammar({
             $.field_expression,
             $.function_call,
             $.type_operator,
+            $.casting_operator,
         ),
 
         _identifier: $ => choice(
@@ -412,12 +414,15 @@ module.exports = grammar({
 
         type_operator: $=> seq(
             field('function', choice('addressof', 'sizeof')),
-            $._single_parameter_definition,
-        ),
-
-        _single_parameter_definition: $=> seq(
             '(',
             field('argument', $._identifier),
+            ')'
+        ),
+
+        casting_operator: $=> seq(
+            field('function', $.primitive_type),
+            '(',
+            field('argument', $._expression),
             ')'
         ),
 
