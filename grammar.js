@@ -465,8 +465,8 @@ module.exports = grammar({
         ),
 
         function_call_parameters: $=> seq(
-            field('parameter', $.identifier),
-            repeat(seq(',', field('parameter', $.identifier)))
+            field('parameter', $._expression),
+            repeat(seq(',', field('parameter', $._expression)))
         ),
 
         function_definition: $=> seq(

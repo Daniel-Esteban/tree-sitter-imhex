@@ -2613,7 +2613,7 @@
           "name": "parameter",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "_expression"
           }
         },
         {
@@ -2630,7 +2630,7 @@
                 "name": "parameter",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "identifier"
+                  "name": "_expression"
                 }
               }
             ]
