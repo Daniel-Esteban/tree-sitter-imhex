@@ -1,0 +1,58 @@
+==================
+Simple bitfield definition
+==================
+
+bitfield Permission {
+  r : 1;
+  w : 1;
+  x : 1;
+};
+
+---
+(source_file
+  (bitfield_definition
+    name: (identifier)
+    body: (bitfield_list
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+    )
+  )
+)
+
+==================
+Bitfield definition with padding
+==================
+
+bitfield Permission {
+  r : 1;
+  w : 1;
+  padding : 4;
+  x : 1;
+};
+
+---
+(source_file
+  (bitfield_definition
+    name: (identifier)
+    body: (bitfield_list
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+      field: (bitfield_entry
+        value: (number_literal))
+      field: (bitfield_entry
+        name: (identifier)
+        value: (number_literal))
+    )
+  )
+)

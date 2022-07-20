@@ -29,3 +29,9 @@ union MyUnion {
     u8 ident [[color("00FF00")]];
 }[[static]];
 
+bitfield MyBitfield {
+    a: 1;
+    b: 2;
+    padding: 6;
+    c: 3;
+}

@@ -29,6 +29,7 @@ module.exports = grammar({
         _top_level_statement: $ => choice(
             $.struct_definition,
             $.union_definition,
+            $.bitfield_definition,
             $.variable_placement,
             $._statement,
             $._preproc_directive,
@@ -108,6 +109,13 @@ module.exports = grammar({
             $._declaration_finish
         ),
 
+        bitfield_definition: $=> seq(
+            'bitfield',
+            field('name', $._identifier),
+            field('body', $.bitfield_list),
+            $._declaration_finish
+        ),
+
         _definition_statement: $ => choice(
             $.variable_definition,
             $.assignation_statement
@@ -182,6 +190,19 @@ module.exports = grammar({
             '{',
             repeat(choice($._statement, $.padding)),
             '}',
+        ),
+
+        bitfield_list: $ => seq(
+            '{',
+            repeat1(field('field', $.bitfield_entry)),
+            '}',
+        ),
+
+        bitfield_entry: $=> seq(
+            field('name', choice($.identifier, 'padding')),
+            ':',
+            field('value', $.number_literal),
+            ';' // TODO: can have attributes? $._declaration_finish?
         ),
 
         _declaration_finish: $ => seq(

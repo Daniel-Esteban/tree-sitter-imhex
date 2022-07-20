@@ -24,12 +24,13 @@
 (casting_operator function:(primitive_type) @function.builtin)
 (field_identifier) @field
 (this) @field
+(bitfield_entry name:(identifier) @field)
 
 ; Keywords
 [ "if" "else" ] @conditional
 [ "while" ] @repeat
 [
-  "struct" "union"
+  "struct" "union" "bitfield"
   "break" "continue"
   "padding"
   "using"

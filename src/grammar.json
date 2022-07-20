@@ -21,6 +21,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "bitfield_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "variable_placement"
         },
         {
@@ -365,6 +369,35 @@
         }
       ]
     },
+    "bitfield_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "bitfield"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "bitfield_list"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_declaration_finish"
+        }
+      ]
+    },
     "_definition_statement": {
       "type": "CHOICE",
       "members": [
@@ -678,6 +711,68 @@
         {
           "type": "STRING",
           "value": "}"
+        }
+      ]
+    },
+    "bitfield_list": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "FIELD",
+            "name": "field",
+            "content": {
+              "type": "SYMBOL",
+              "name": "bitfield_entry"
+            }
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "bitfield_entry": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "STRING",
+                "value": "padding"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "SYMBOL",
+            "name": "number_literal"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ";"
         }
       ]
     },

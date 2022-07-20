@@ -58,7 +58,7 @@ Finally, in NeoVim:
 - [X] Structs
 - [X] Unions
 - [ ] Enums
-- [ ] Bitfields
+- [X] Bitfields
 - [X] Conditionals
 - [ ] Namespaces
 - [ ] Functions
