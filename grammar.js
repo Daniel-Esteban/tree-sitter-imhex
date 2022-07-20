@@ -180,12 +180,13 @@ module.exports = grammar({
         ),
 
         _array_size: $ => choice(
-            $.number_literal,
-            $._identifier,
-            $.loop_size,
-            $.function_call,
-            $.type_operator,
-            $.casting_operator,
+            $._expression, // TODO: Maybe not
+            // $._identifier,
+            // $.number_literal,
+            // $.loop_size,
+            // $.function_call,
+            // $.type_operator,
+            // $.casting_operator,
         ),
 
         loop_size: $ => $._while_head,
@@ -305,6 +306,7 @@ module.exports = grammar({
             $.function_call,
             $.type_operator,
             $.casting_operator,
+            $.loop_size, // TODO: Maybe not
         ),
 
         _identifier: $ => choice(
@@ -328,7 +330,9 @@ module.exports = grammar({
             field('parent', choice($.identifier, $.parent, $.this)),
             repeat1(seq(
                 '.',
-                field('field', $._field_identifier)
+                field('field', $._field_identifier),
+                optional(field('size', $._array_size_wrapper)),
+
             )),
         )),
 

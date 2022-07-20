@@ -72,6 +72,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -195,6 +199,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
             "named": true
           },
           {
@@ -335,6 +343,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
             "named": true
           },
           {
@@ -536,6 +548,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -627,6 +643,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "loop_size",
           "named": true
         },
         {
@@ -763,6 +783,76 @@
           },
           {
             "type": "this",
+            "named": true
+          }
+        ]
+      },
+      "size": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "[",
+            "named": false
+          },
+          {
+            "type": "]",
+            "named": false
+          },
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "casting_operator",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "type_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
             "named": true
           }
         ]
@@ -1017,6 +1107,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -1146,6 +1240,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -1188,11 +1286,27 @@
         "required": false,
         "types": [
           {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
             "type": "casting_operator",
             "named": true
           },
           {
+            "type": "character_literal",
+            "named": true
+          },
+          {
             "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -1212,7 +1326,19 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
             "type": "type_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
             "named": true
           }
         ]
@@ -1522,6 +1648,10 @@
           "named": true
         },
         {
+          "type": "loop_size",
+          "named": true
+        },
+        {
           "type": "number_literal",
           "named": true
         },
@@ -1728,6 +1858,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -1786,6 +1920,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -1841,6 +1979,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
             "named": true
           },
           {
@@ -1939,6 +2081,10 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "loop_size",
           "named": true
         },
         {
@@ -2093,11 +2239,27 @@
         "required": false,
         "types": [
           {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
             "type": "casting_operator",
             "named": true
           },
           {
+            "type": "character_literal",
+            "named": true
+          },
+          {
             "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -2117,7 +2279,19 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
             "type": "type_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
             "named": true
           }
         ]
@@ -2217,6 +2391,10 @@
             "named": true
           },
           {
+            "type": "loop_size",
+            "named": true
+          },
+          {
             "type": "number_literal",
             "named": true
           },
@@ -2243,11 +2421,27 @@
         "required": false,
         "types": [
           {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
             "type": "casting_operator",
             "named": true
           },
           {
+            "type": "character_literal",
+            "named": true
+          },
+          {
             "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
             "named": true
           },
           {
@@ -2267,7 +2461,19 @@
             "named": true
           },
           {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
             "type": "type_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
             "named": true
           }
         ]
@@ -2376,6 +2582,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
             "named": true
           },
           {

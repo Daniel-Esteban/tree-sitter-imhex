@@ -665,27 +665,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "number_literal"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_identifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "loop_size"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_call"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type_operator"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "casting_operator"
+          "name": "_expression"
         }
       ]
     },
@@ -1413,6 +1393,10 @@
         {
           "type": "SYMBOL",
           "name": "casting_operator"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "loop_size"
         }
       ]
     },
@@ -1506,6 +1490,22 @@
                     "type": "SYMBOL",
                     "name": "_field_identifier"
                   }
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "FIELD",
+                      "name": "size",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_array_size_wrapper"
+                      }
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
                 }
               ]
             }
