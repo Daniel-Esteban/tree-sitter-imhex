@@ -1,0 +1,48 @@
+==================
+Namespaced identifier
+==================
+
+u8 x @ nms1::nms2::xx;
+
+namespace1::namespace2::Mytype var @ 0x0;
+
+n2::n2::func(x);
+
+---
+(source_file
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (namespaced_identifier
+      namespace: (identifier)
+      name: (namespaced_identifier
+        namespace: (identifier)
+        name: (identifier))))
+  (variable_placement
+    type: (namespaced_type_identifier
+      namespace: (identifier)
+      type: (namespaced_type_identifier
+        namespace: (identifier)
+        type: (type_identifier)))
+    name: (identifier)
+    offset: (number_literal))
+  (namespaced_function_call
+    namespace: (identifier)
+      call: (namespaced_function_call
+        namespace: (identifier)
+        call: (function_call
+          name: (identifier)
+          parameters: (function_call_parameters
+            parameter: (identifier)))))
+)
+
+==================
+Namespace definition
+==================
+
+namespace mynamespace {}
+
+---
+(source_file
+    (namespace name: (identifier))
+)

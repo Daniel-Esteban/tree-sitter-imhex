@@ -60,7 +60,7 @@ Finally, in NeoVim:
 - [X] Enums
 - [X] Bitfields
 - [X] Conditionals
-- [ ] Namespaces
+- [X] Namespaces
 - [ ] Functions
     - [X] Functions
     - [X] If-Else statements
@@ -71,4 +71,3 @@ Finally, in NeoVim:
 - [X] Attributes
 - [ ] In / Out variables
 - [X] Preprocessor
-- [ ] Standard Library

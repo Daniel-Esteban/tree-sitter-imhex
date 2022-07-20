@@ -36,6 +36,7 @@
   "break" "continue"
   "padding"
   "using"
+  "namespace"
   (parent)
   (endian_val)
 ] @keyword
@@ -65,6 +66,8 @@
 (bitfield_definition name:(identifier) @type)
 (enum_definition name:(identifier) @type)
 (endian_indicator) @type.builtin
+namespace:(identifier) @namespace
+(namespace name:(identifier) @namespace)
 (attribute) @attribute
 
 ; Variables

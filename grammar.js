@@ -27,6 +27,7 @@ module.exports = grammar({
         source_file: $ => repeat($._top_level_statement),
 
         _top_level_statement: $ => choice(
+            $.namespace,
             $.struct_definition,
             $.union_definition,
             $.bitfield_definition,
@@ -36,6 +37,14 @@ module.exports = grammar({
             $._preproc_directive,
             $.using_definition,
             $.function_definition,
+        ),
+
+        namespace: $ => seq(
+            'namespace',
+            field('name', $.identifier),
+            '{',
+            repeat($._top_level_statement),
+            '}'
         ),
 
         _preproc_directive: $=> choice(
@@ -189,7 +198,7 @@ module.exports = grammar({
             // $._identifier,
             // $.number_literal,
             // $.loop_size,
-            // $.function_call,
+            // $._function_call,
             // $.type_operator,
             // $.casting_operator,
         ),
@@ -271,7 +280,8 @@ module.exports = grammar({
 
         _type: $ => choice(
             $._primitive_type,
-            $._type_identifier
+            $._type_identifier,
+            $.namespaced_type_identifier
         ),
 
         _primitive_type: $ => seq(
@@ -322,14 +332,33 @@ module.exports = grammar({
             $.character_literal,
             $.boolean_literal,
             $.field_expression,
-            $.function_call,
+            $._function_call,
             $.type_operator,
             $.casting_operator,
             $.loop_size, // TODO: Maybe not
         ),
 
+        namespaced_identifier: $ => seq(
+            field('namespace', $.identifier),
+            '::',
+            field('name', $._identifier)
+        ),
+
+        namespaced_type_identifier: $ => seq(
+            field('namespace', $.identifier),
+            '::',
+            field('type', $._type)
+        ),
+
+        namespaced_function_call: $ => seq(
+            field('namespace', $.identifier),
+            '::',
+            field('call', $._function_call)
+        ),
+
         _identifier: $ => choice(
             $.identifier,
+            $.namespaced_identifier,
             $.dollar,
         ),
 
@@ -455,7 +484,12 @@ module.exports = grammar({
             field('body', choice($.block, $._statement)),
         ),
 
-        _function_call_statement: $=> seq($.function_call, ';'),
+        _function_call_statement: $=> seq($._function_call, ';'),
+
+        _function_call: $ => choice(
+            $.function_call,
+            $.namespaced_function_call
+        ),
 
         function_call: $=> seq(
             field('name', $.identifier),
