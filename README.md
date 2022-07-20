@@ -60,7 +60,7 @@ Finally, in NeoVim:
     - [ ] Casting Operator
 - [X] Variable placement
 - [X] Arrays
-    - [ ] Loop sized arrays
+    - [X] Loop sized arrays
 - [ ] Pointers
 - [X] Structs
 - [X] Unions

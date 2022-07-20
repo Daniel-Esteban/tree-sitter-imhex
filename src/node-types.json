@@ -1,81 +1,5 @@
 [
   {
-    "type": "array_definition",
-    "named": true,
-    "fields": {
-      "attribute": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "attribute",
-            "named": true
-          }
-        ]
-      },
-      "endian": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "endian_indicator",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "dollar",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          }
-        ]
-      },
-      "size": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "dollar",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "number_literal",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "endian_indicator",
-            "named": true
-          },
-          {
-            "type": "primitive_type",
-            "named": true
-          },
-          {
-            "type": "type_identifier",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "assignation_statement",
     "named": true,
     "fields": {
@@ -422,10 +346,6 @@
       "required": false,
       "types": [
         {
-          "type": "array_definition",
-          "named": true
-        },
-        {
           "type": "assignation_statement",
           "named": true
         },
@@ -588,10 +508,6 @@
       "required": false,
       "types": [
         {
-          "type": "array_definition",
-          "named": true
-        },
-        {
           "type": "assignation_statement",
           "named": true
         },
@@ -685,10 +601,6 @@
             "named": false
           },
           {
-            "type": "array_definition",
-            "named": true
-          },
-          {
             "type": "assignation_statement",
             "named": true
           },
@@ -759,10 +671,6 @@
           {
             "type": ";",
             "named": false
-          },
-          {
-            "type": "array_definition",
-            "named": true
           },
           {
             "type": "assignation_statement",
@@ -861,10 +769,6 @@
             "named": false
           },
           {
-            "type": "array_definition",
-            "named": true
-          },
-          {
             "type": "assignation_statement",
             "named": true
           },
@@ -924,6 +828,62 @@
     }
   },
   {
+    "type": "loop_size",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "character_literal",
+            "named": true
+          },
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "field_expression",
+            "named": true
+          },
+          {
+            "type": "function_call",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          },
+          {
+            "type": "string_literal",
+            "named": true
+          },
+          {
+            "type": "ternary_numeric_operator",
+            "named": true
+          },
+          {
+            "type": "unary_numeric_operator",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "padding",
     "named": true,
     "fields": {
@@ -947,6 +907,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
             "named": true
           },
           {
@@ -1282,10 +1246,6 @@
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "array_definition",
-          "named": true
-        },
         {
           "type": "assignation_statement",
           "named": true
@@ -1748,6 +1708,28 @@
           }
         ]
       },
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      },
       "type": {
         "multiple": true,
         "required": true,
@@ -1856,6 +1838,28 @@
           }
         ]
       },
+      "size": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "dollar",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "loop_size",
+            "named": true
+          },
+          {
+            "type": "number_literal",
+            "named": true
+          }
+        ]
+      },
       "type": {
         "multiple": true,
         "required": true,
@@ -1887,10 +1891,6 @@
           {
             "type": ";",
             "named": false
-          },
-          {
-            "type": "array_definition",
-            "named": true
           },
           {
             "type": "assignation_statement",

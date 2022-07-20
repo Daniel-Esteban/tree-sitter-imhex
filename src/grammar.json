@@ -374,10 +374,6 @@
         },
         {
           "type": "SYMBOL",
-          "name": "array_definition"
-        },
-        {
-          "type": "SYMBOL",
           "name": "assignation_statement"
         }
       ]
@@ -427,6 +423,18 @@
           "name": "_identifier_definition"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_array_size_wrapper"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "SYMBOL",
           "name": "_declaration_finish"
         }
@@ -446,6 +454,18 @@
         {
           "type": "SYMBOL",
           "name": "_identifier_definition"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_array_size_wrapper"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
@@ -520,31 +540,6 @@
         }
       ]
     },
-    "array_definition": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "FIELD",
-          "name": "type",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_type"
-          }
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_identifier_definition"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_array_size_wrapper"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_declaration_finish"
-        }
-      ]
-    },
     "padding": {
       "type": "SEQ",
       "members": [
@@ -601,8 +596,16 @@
         {
           "type": "SYMBOL",
           "name": "_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "loop_size"
         }
       ]
+    },
+    "loop_size": {
+      "type": "SYMBOL",
+      "name": "_while_head"
     },
     "_identifier_definition": {
       "type": "SEQ",
@@ -2202,7 +2205,7 @@
         }
       ]
     },
-    "while_statement": {
+    "_while_head": {
       "type": "SEQ",
       "members": [
         {
@@ -2212,6 +2215,15 @@
         {
           "type": "SYMBOL",
           "name": "_condition"
+        }
+      ]
+    },
+    "while_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_while_head"
         },
         {
           "type": "FIELD",

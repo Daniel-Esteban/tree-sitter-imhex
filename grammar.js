@@ -110,7 +110,6 @@ module.exports = grammar({
 
         _definition_statement: $ => choice(
             $.variable_definition,
-            $.array_definition,
             $.assignation_statement
         ),
 
@@ -125,12 +124,14 @@ module.exports = grammar({
         variable_definition: $ => seq(
             field('type', $._type),
             $._identifier_definition,
+            optional($._array_size_wrapper),
             $._declaration_finish
         ),
 
         variable_placement: $ => seq(
             field('type', $._type),
             $._identifier_definition,
+            optional($._array_size_wrapper),
             '@',
             field('offset', $._offset),
             $._declaration_finish
@@ -149,13 +150,6 @@ module.exports = grammar({
             ';' // TODO: Optional?
         ),
 
-        array_definition: $ => seq(
-            field('type', $._type),
-            $._identifier_definition,
-            $._array_size_wrapper,
-            $._declaration_finish
-        ),
-
         padding: $ => seq(
             'padding',
             $._array_size_wrapper,
@@ -171,8 +165,10 @@ module.exports = grammar({
         _array_size: $ => choice(
             $.number_literal,
             $._identifier,
-            //TODO: Loopsized arrays
+            $.loop_size,
         ),
+
+        loop_size: $ => $._while_head,
 
         _identifier_definition: $ => seq(
             repeat(seq(field('name', $._identifier), ',')),
@@ -382,9 +378,10 @@ module.exports = grammar({
 
         continue_statement: $=> seq('continue', ';'),
 
+        _while_head: $=> seq('while', $._condition),
+
         while_statement: $=> seq(
-            'while',
-            $._condition,
+            $._while_head,
             field('body', choice($.block, $._statement)),
         ),
 

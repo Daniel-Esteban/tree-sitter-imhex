@@ -99,17 +99,31 @@ u8 ident[x];
 
 ---
 (source_file
-  (array_definition
+  (variable_definition
     type: (primitive_type)
     name: (identifier))
-  (array_definition
+  (variable_definition
     type: (type_identifier)
     name: (identifier)
     size: (number_literal))
-  (array_definition
+  (variable_definition
     type: (primitive_type)
     name: (identifier)
     size: (identifier))
+)
+
+==================
+Loop sized arrays
+==================
+
+u8 ident[while(true)];
+
+---
+(source_file
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier)
+    size: (loop_size condition: (boolean_literal)))
 )
 
 ==================
