@@ -71,9 +71,9 @@ Finally, in NeoVim:
 - [ ] Functions
     - [X] Functions
     - [X] If-Else statements
-    - [ ] While loops
+    - [X] While loops
     - [ ] For-statement
-    - [ ] Loop-control statents
+    - [X] Loop-control statents
     - [X] Return statement
 - [X] Attributes
 - [ ] In / Out variables

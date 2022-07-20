@@ -240,8 +240,11 @@ module.exports = grammar({
         _statement: $ => choice (
             $._definition_statement,
             $.if_statement,
+            $.while_statement,
             $._function_call_statement,
-            $.return_statement
+            $.return_statement,
+            $.break_statement,
+            $.continue_statement,
         ),
 
         return_statement: $ => seq(
@@ -375,6 +378,15 @@ module.exports = grammar({
             ))
         )),
 
+        break_statement: $=> seq('break', ';'),
+
+        continue_statement: $=> seq('continue', ';'),
+
+        while_statement: $=> seq(
+            'while',
+            $._condition,
+            field('body', choice($.block, $._statement)),
+        ),
 
         _function_call_statement: $=> seq($.function_call, ';'),
 

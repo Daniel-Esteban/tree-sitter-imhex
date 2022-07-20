@@ -116,3 +116,56 @@ myfunc(arg1, arg2);
       parameter: (identifier))
   )
 )
+
+==================
+Simple while loop
+==================
+
+while(true) {
+
+}
+
+---
+(source_file
+  (while_statement
+    condition: (boolean_literal)
+    body: (block))
+)
+
+==================
+Complex while loop
+==================
+
+while(a < 50 && check()) {
+    if (x == 36.5)
+        break;
+    else {
+        a += 5;
+        continue;
+    }
+}
+
+---
+(source_file
+  (while_statement
+    condition: (binary_numeric_operator
+      left: (binary_numeric_operator
+        left: (identifier)
+        right: (number_literal))
+      right: (function_call
+        name: (identifier)))
+    body: (block
+      (if_statement
+        condition: (binary_numeric_operator
+          left: (identifier)
+          right: (number_literal))
+        body: (break_statement)
+        else: (block
+          (assignation_statement
+            left: (identifier)
+            right: (number_literal))
+          (continue_statement))
+      )
+    )
+  )
+)

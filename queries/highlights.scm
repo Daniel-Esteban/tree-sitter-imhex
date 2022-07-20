@@ -4,6 +4,8 @@
   "padding"
   "using"
   "fn"
+  "break"
+  "continue"
   "return"
   (parent)
   (endian_val)
@@ -46,6 +48,8 @@
 [ ";" "," ] @punctuation.delimiter
 
 [ "if" "else" ] @conditional
+
+[ "while" ] @repeat
 
 (identifier) @variable
 (primitive_type) @type.builtin
