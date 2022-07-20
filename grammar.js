@@ -166,6 +166,8 @@ module.exports = grammar({
             $.number_literal,
             $._identifier,
             $.loop_size,
+            $.function_call,
+            $.type_operator,
         ),
 
         loop_size: $ => $._while_head,
@@ -258,6 +260,7 @@ module.exports = grammar({
             $.boolean_literal,
             $.field_expression,
             $.function_call,
+            $.type_operator,
         ),
 
         _identifier: $ => choice(
@@ -405,6 +408,17 @@ module.exports = grammar({
             field('parameters', $.parameters_definition),
             field('block', choice($.block, $._statement)),
             ';'
+        ),
+
+        type_operator: $=> seq(
+            field('function', choice('addressof', 'sizeof')),
+            $._single_parameter_definition,
+        ),
+
+        _single_parameter_definition: $=> seq(
+            '(',
+            field('argument', $._identifier),
+            ')'
         ),
 
         parameters_definition: $=> seq(

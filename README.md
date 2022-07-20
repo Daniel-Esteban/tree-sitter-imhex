@@ -53,14 +53,13 @@ Finally, in NeoVim:
 - [X] Comments
 - [ ] Mathematical expressions
     - [X] Numeric Operators
-    - [ ] Type Operators
+    - [X] Type Operators
     - [X] String Operators
     - [X] Member Access
     - [X] Dollar Operator
     - [ ] Casting Operator
 - [X] Variable placement
 - [X] Arrays
-    - [X] Loop sized arrays
 - [ ] Pointers
 - [X] Structs
 - [X] Unions

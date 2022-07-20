@@ -158,3 +158,22 @@ using Offset = le u32;
     endian: (endian_indicator)
     type: (primitive_type))
 )
+
+==================
+Type operators
+==================
+
+u8 x @ addressof(x);
+u8 x[sizeof(y)];
+
+---
+(source_file
+  (variable_placement
+    type: (primitive_type)
+    name: (identifier)
+    offset: (type_operator argument: (identifier)))
+  (variable_definition
+    type: (primitive_type)
+    name: (identifier)
+    size: (type_operator argument: (identifier)))
+)

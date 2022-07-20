@@ -19,6 +19,7 @@
 ; Functions
 (function_definition name:(identifier) @function)
 (function_call name:(identifier) @function)
+["addressof" "sizeof"] @function.builtin
 (field_identifier) @field
 (this) @field
 
