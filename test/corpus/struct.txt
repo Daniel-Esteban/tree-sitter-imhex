@@ -177,3 +177,28 @@ struct mystruct {
         name: (identifier)))
   )
 )
+
+==================
+With pointer
+==================
+struct mystruct {
+    u8 *offset: u16;
+    CustomType *x: u16;
+};
+
+---
+(source_file
+  (struct_definition
+    name: (identifier)
+    body: (field_list
+      (pointer_type
+        type: (primitive_type)
+        name: (identifier)
+        pointer_type: (primitive_type))
+      (pointer_type
+        type: (type_identifier)
+        name: (identifier)
+        pointer_type: (primitive_type))
+    )
+  )
+)

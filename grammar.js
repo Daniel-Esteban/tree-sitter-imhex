@@ -146,9 +146,14 @@ module.exports = grammar({
         ),
 
         variable_placement: $ => seq(
-            field('type', $._type),
-            $._identifier_definition,
-            optional($._array_size_wrapper),
+            choice(
+                seq(
+                    field('type', $._type),
+                    $._identifier_definition,
+                    optional($._array_size_wrapper),
+                ),
+                field('type', $.pointer_type)
+            ),
             '@',
             field('offset', $._offset),
             $._declaration_finish
@@ -251,6 +256,19 @@ module.exports = grammar({
             seq(field('name','static')), // TODO: Separate this as type_attribute?
         ),
 
+        _pointer_statement: $ => seq(
+            $.pointer_type,
+            ';'
+        ),
+
+        pointer_type: $ => seq( // Can only be placed inside structs, unions and variable_placement?
+            field('type', $._type),
+            '*',
+            field('name', $.identifier),
+            ':',
+            field('pointer_type', $.primitive_type)
+        ),
+
         _type: $ => choice(
             $._primitive_type,
             $._type_identifier
@@ -287,6 +305,7 @@ module.exports = grammar({
             $.return_statement,
             $.break_statement,
             $.continue_statement,
+            $._pointer_statement, // only in structs and unions
         ),
 
         return_statement: $ => seq(

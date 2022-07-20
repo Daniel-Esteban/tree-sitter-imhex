@@ -54,7 +54,7 @@ Finally, in NeoVim:
 - [X] Mathematical expressions
 - [X] Variable placement
 - [X] Arrays
-- [ ] Pointers
+- [X] Pointers
 - [X] Structs
 - [X] Unions
 - [X] Enums

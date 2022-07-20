@@ -32,3 +32,25 @@ u8 ident @ offset;
     offset: (identifier))
 )
 
+==================
+Pointer variable placement
+==================
+
+u8 *ident : u8 @ 51;
+MyType *ident : u32 @ offset;
+
+---
+(source_file
+  (variable_placement
+    type: (pointer_type
+      type: (primitive_type)
+      name: (identifier)
+      pointer_type: (primitive_type))
+    offset: (number_literal))
+  (variable_placement
+    type: (pointer_type
+      type: (type_identifier)
+      name: (identifier)
+      pointer_type: (primitive_type))
+    offset: (identifier))
+)
