@@ -50,11 +50,6 @@ Finally, in NeoVim:
 
 ## TODO List
 - [X] Data Types
-    - [X] Built-in Types
-    - [X] Endianess
-    - [X] Arrays
-    - [X] Using declarations
-    - [X] Literals
 - [X] Comments
 - [ ] Mathematical expressions
     - [X] Numeric Operators
@@ -73,7 +68,13 @@ Finally, in NeoVim:
 - [ ] Bitfields
 - [X] Conditionals
 - [ ] Namespaces
-- [X] Functions
+- [ ] Functions
+    - [X] Functions
+    - [X] If-Else statements
+    - [ ] While loops
+    - [ ] For-statement
+    - [ ] Loop-control statents
+    - [X] Return statement
 - [X] Attributes
 - [ ] In / Out variables
 - [X] Preprocessor
