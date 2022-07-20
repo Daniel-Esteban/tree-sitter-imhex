@@ -25,6 +25,7 @@
 (field_identifier) @field
 (this) @field
 (bitfield_entry name:(identifier) @field)
+(field_list (variable_definition name:(identifier) @field))
 (enum_field name:(identifier) @field)
 
 ; Keywords
@@ -58,7 +59,11 @@
 "#include" @include
 
 (type_identifier) @type
-(using_definition name: (identifier) @type)
+(using_definition name:(identifier) @type)
+(struct_definition name:(identifier) @type)
+(union_definition name:(identifier) @type)
+(bitfield_definition name:(identifier) @type)
+(enum_definition name:(identifier) @type)
 (endian_indicator) @type.builtin
 (attribute) @attribute
 
