@@ -4,7 +4,7 @@
 ; Misc
 (comment) @comment
 (ERROR) @error
-[ "(" ")" "{" "}" "[[" "]]" ] @punctuation.bracket
+[ "(" ")" "{" "}" "[[" "]]" "[" "]"] @punctuation.bracket
 [ ";" "," ] @punctuation.delimiter
 (define (identifier)@constant.macro) @preproc
 (pragma (_) @parameter) @preproc
