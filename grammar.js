@@ -147,10 +147,19 @@ module.exports = grammar({
             ';'
         ),
 
+        for_variable_init: $ => seq(
+            field('type', $._type),
+            $._identifier_definition, // TODO
+            optional($._array_size_wrapper),
+            '=',
+            field('value', $._expression),
+        ),
+
         variable_definition: $ => seq(
             field('type', $._type),
             $._identifier_definition,
             optional($._array_size_wrapper),
+            optional(seq('=', field('value', $._expression))),
             $._declaration_finish
         ),
 
@@ -158,7 +167,7 @@ module.exports = grammar({
             choice(
                 seq(
                     field('type', $._type),
-                    $._identifier_definition,
+                    $._identifier_definition,// TODO, maybe only one identifier?
                     optional($._array_size_wrapper),
                 ),
                 field('type', $.pointer_type)
@@ -174,11 +183,17 @@ module.exports = grammar({
             // $._identifier,
         ),
 
-        assignation_statement: $ => seq(
+        _assignation_expression: $ => seq(
             field('left', $._identifier),
             field('operator', choice('=', '+=', '-=')),
             field('right', $._expression),
-            ';' // TODO: Optional?
+        ),
+
+        assignation_expression: $ => $._assignation_expression,
+
+        assignation_statement: $ => seq(
+            $._assignation_expression,
+            ';'
         ),
 
         padding: $ => seq(
@@ -311,6 +326,7 @@ module.exports = grammar({
             $._definition_statement,
             $.if_statement,
             $.while_statement,
+            $.for_statement,
             $._function_call_statement,
             $.return_statement,
             $.break_statement,
@@ -481,6 +497,22 @@ module.exports = grammar({
 
         while_statement: $=> seq(
             $._while_head,
+            field('body', choice($.block, $._statement)),
+        ),
+
+        _for_head: $=> seq(
+            'for',
+            '(',
+            field('initialization', $.for_variable_init),
+            ',',
+            field('condition', $._expression),
+            ',',
+            field('increment', $.assignation_expression),
+            ')'
+        ),
+
+        for_statement: $=> seq(
+            $._for_head,
             field('body', choice($.block, $._statement)),
         ),
 

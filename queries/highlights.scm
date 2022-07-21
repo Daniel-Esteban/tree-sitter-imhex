@@ -30,7 +30,7 @@
 
 ; Keywords
 [ "if" "else" ] @conditional
-[ "while" ] @repeat
+[ "while" "for" ] @repeat
 [
   "struct" "union" "bitfield" "enum"
   "break" "continue"

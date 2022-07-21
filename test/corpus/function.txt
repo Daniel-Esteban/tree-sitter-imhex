@@ -169,3 +169,30 @@ while(a < 50 && check()) {
     )
   )
 )
+
+==================
+Simple for loop
+==================
+
+
+for ( u8 i = 0 , i < 10 , i = i + 1) {
+
+}
+
+---
+(source_file
+  (for_statement
+    initialization: (for_variable_init
+      type: (primitive_type)
+      name: (identifier)
+      value: (number_literal))
+    condition: (binary_numeric_operator
+      left: (identifier)
+      right: (number_literal))
+    increment: (assignation_expression
+      left: (identifier)
+      right: (binary_numeric_operator
+        left: (identifier)
+        right: (number_literal)))
+    body: (block))
+)

@@ -61,13 +61,7 @@ Finally, in NeoVim:
 - [X] Bitfields
 - [X] Conditionals
 - [X] Namespaces
-- [ ] Functions
-    - [X] Functions
-    - [X] If-Else statements
-    - [X] While loops
-    - [ ] For-statement
-    - [X] Loop-control statents
-    - [X] Return statement
+- [X] Functions
 - [X] Attributes
 - [ ] In / Out variables
 - [X] Preprocessor
