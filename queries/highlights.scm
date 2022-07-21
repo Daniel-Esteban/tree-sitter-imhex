@@ -37,6 +37,7 @@
   "padding"
   "using"
   "namespace"
+  "in" "out"
   (parent)
   (endian_val)
 ] @keyword

@@ -32,6 +32,7 @@ module.exports = grammar({
             $.union_definition,
             $.bitfield_definition,
             $.enum_definition,
+            $.inout_definition,
             $.variable_placement,
             $._statement,
             $._preproc_directive,
@@ -153,6 +154,13 @@ module.exports = grammar({
             optional($._array_size_wrapper),
             '=',
             field('value', $._expression),
+        ),
+
+        inout_definition: $ => seq(
+            field('type', $._type),
+            field('name', $.identifier),
+            field('inout', choice('in', 'out')),
+            ';'
         ),
 
         variable_definition: $ => seq(

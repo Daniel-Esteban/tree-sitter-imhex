@@ -1,5 +1,5 @@
-WIP
-=====
+Tree-sitter-imhex
+===
 [ImHex](https://github.com/WerWolv/ImHex) pattern grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 inspired by [tree-sitter-c](https://github.com/tree-sitter/tree-sitter-c)
 
@@ -47,21 +47,3 @@ Finally, in NeoVim:
 ```sh
 :TSInstall imhex
 ```
-
-## TODO List
-- [X] Data Types
-- [X] Comments
-- [X] Mathematical expressions
-- [X] Variable placement
-- [X] Arrays
-- [X] Pointers
-- [X] Structs
-- [X] Unions
-- [X] Enums
-- [X] Bitfields
-- [X] Conditionals
-- [X] Namespaces
-- [X] Functions
-- [X] Attributes
-- [ ] In / Out variables
-- [X] Preprocessor

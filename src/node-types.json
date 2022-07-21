@@ -1846,6 +1846,68 @@
     }
   },
   {
+    "type": "inout_definition",
+    "named": true,
+    "fields": {
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
+      "inout": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "in",
+            "named": false
+          },
+          {
+            "type": "out",
+            "named": false
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          },
+          {
+            "type": "namespaced_type_identifier",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "loop_size",
     "named": true,
     "fields": {
@@ -1982,6 +2044,10 @@
         },
         {
           "type": "include",
+          "named": true
+        },
+        {
+          "type": "inout_definition",
           "named": true
         },
         {
@@ -2690,6 +2756,10 @@
         },
         {
           "type": "include",
+          "named": true
+        },
+        {
+          "type": "inout_definition",
           "named": true
         },
         {
@@ -4065,6 +4135,10 @@
     "named": false
   },
   {
+    "type": "in",
+    "named": false
+  },
+  {
     "type": "inline",
     "named": false
   },
@@ -4091,6 +4165,10 @@
   {
     "type": "number_literal",
     "named": true
+  },
+  {
+    "type": "out",
+    "named": false
   },
   {
     "type": "padding",

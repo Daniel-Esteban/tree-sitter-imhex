@@ -192,3 +192,20 @@ x = u8(50.0);
       function: (primitive_type)
       argument: (number_literal)))
 )
+
+==================
+In/Out variables
+==================
+
+u8 x in;
+u8 y out;
+
+---
+(source_file
+  (inout_definition
+    type: (primitive_type)
+    name: (identifier))
+  (inout_definition
+    type: (primitive_type)
+    name: (identifier))
+)
