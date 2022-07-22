@@ -2848,6 +2848,16 @@
           }
         ]
       },
+      "endian": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2862,6 +2872,38 @@
           },
           {
             "type": "namespaced_identifier",
+            "named": true
+          }
+        ]
+      },
+      "parent": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "endian_indicator",
+            "named": true
+          },
+          {
+            "type": "namespaced_type_identifier",
+            "named": true
+          },
+          {
+            "type": "primitive_type",
+            "named": true
+          },
+          {
+            "type": "type_identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "primitive_type",
             "named": true
           }
         ]

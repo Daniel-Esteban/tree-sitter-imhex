@@ -109,6 +109,7 @@ module.exports = grammar({
         struct_definition: $ => seq(
             'struct',
             field('name', $._identifier),
+            optional(seq(':', field('parent', $._type))),
             field('body',$.field_list),
             $._declaration_finish
         ),
