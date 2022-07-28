@@ -513,6 +513,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "array_definition"
+        },
+        {
+          "type": "SYMBOL",
           "name": "assignation_statement"
         }
       ]
@@ -648,13 +652,51 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "_array_size_wrapper"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "="
+                },
+                {
+                  "type": "FIELD",
+                  "name": "value",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  }
+                }
+              ]
             },
             {
               "type": "BLANK"
             }
           ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_declaration_finish"
+        }
+      ]
+    },
+    "array_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_identifier_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_array_size_wrapper"
         },
         {
           "type": "CHOICE",

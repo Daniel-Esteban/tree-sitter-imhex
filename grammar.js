@@ -138,6 +138,7 @@ module.exports = grammar({
 
         _definition_statement: $ => choice(
             $.variable_definition,
+            $.array_definition,
             $.assignation_statement
         ),
 
@@ -167,7 +168,14 @@ module.exports = grammar({
         variable_definition: $ => seq(
             field('type', $._type),
             $._identifier_definition,
-            optional($._array_size_wrapper),
+            optional(seq('=', field('value', $._expression))),
+            $._declaration_finish
+        ),
+
+        array_definition: $ => seq(
+            field('type', $._type),
+            $._identifier_definition,
+            $._array_size_wrapper,
             optional(seq('=', field('value', $._expression))),
             $._declaration_finish
         ),

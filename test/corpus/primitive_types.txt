@@ -99,14 +99,14 @@ u8 ident[x];
 
 ---
 (source_file
-  (variable_definition
+  (array_definition
     type: (primitive_type)
     name: (identifier))
-  (variable_definition
+  (array_definition
     type: (type_identifier)
     name: (identifier)
     size: (number_literal))
-  (variable_definition
+  (array_definition
     type: (primitive_type)
     name: (identifier)
     size: (identifier))
@@ -120,7 +120,7 @@ u8 ident[while(true)];
 
 ---
 (source_file
-  (variable_definition
+  (array_definition
     type: (primitive_type)
     name: (identifier)
     size: (loop_size condition: (boolean_literal)))
@@ -172,7 +172,7 @@ u8 x[sizeof(y)];
     type: (primitive_type)
     name: (identifier)
     offset: (type_operator argument: (identifier)))
-  (variable_definition
+  (array_definition
     type: (primitive_type)
     name: (identifier)
     size: (type_operator argument: (identifier)))
